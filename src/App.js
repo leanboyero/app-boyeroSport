@@ -1,16 +1,18 @@
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-import logo from './logo.svg';
+import NavBar from './components/NavBar';
+import React from 'react';
 
-function App() {
+const App = () => {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Leandro Boyero</p>
-        Hola coders!
-      </header>
+        <header id="header" className="fixed-top ">
+          <NavBar fixed="top"/>
+        </header>
     </div>
+
   );
 }
 
