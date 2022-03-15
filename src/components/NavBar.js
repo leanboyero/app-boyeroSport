@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { Container, Nav, NavDropdown, Navbar } from 'react-bootstrap';
 
+import Cartwidget from './Cartwidget';
 import logo from '../logo.png';
 
 const NavBar = () =>{
@@ -40,11 +41,15 @@ const NavBar = () =>{
       <Nav.Link href="#contacto">Contacto</Nav.Link>
     </Nav>
     <Nav>
-      <Nav.Link href="#login" className='buttonLogin'>Iniciar sesión</Nav.Link>
-      <Nav.Link href="#carrito">
-        Carrito
-      </Nav.Link>
     </Nav>
+    <Nav className="me-auto">
+      <Nav.Link href="#login" className='buttonLogin'>Iniciar sesión</Nav.Link>
+      </Nav>
+      <Nav className="me-auto">
+      <Nav.Link href="#carrito">
+      <Cartwidget/>
+      </Nav.Link>
+      </Nav>
   </Navbar.Collapse>
   </Container>
 </Navbar>
