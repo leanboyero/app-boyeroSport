@@ -15,8 +15,6 @@ const App = () => {
         <section id="home" className="d-flex align-items-center">
           <ItemListContainer greeting="Bienvenido a Boyero Sport" />
         </section>
-        <main id="main">
-        </main>
     </div>
 
   );
