@@ -1,13 +1,14 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './Nav.css';
 
 import { Container, Nav, NavDropdown, Navbar } from 'react-bootstrap';
 
-import Cartwidget from './Cartwidget';
-import logo from '../logo.png';
+import Cartwidget from '../Cartwidget/Cartwidget';
+import logo from '../../logo.png';
 
 const NavBar = () =>{
     return(
-<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+<Navbar collapseOnSelect expand="lg" variant="dark">
   <Container>
   <Navbar.Brand href="#home"><img src={logo} width="100%" height="55" className="align-top" alt="logo"/></Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
