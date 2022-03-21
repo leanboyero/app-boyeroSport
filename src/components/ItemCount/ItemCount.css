@@ -1,0 +1,29 @@
+.item-count{
+    padding: 30px;
+    box-shadow: 0px 0 30px rgb(55 81 126 / 8%);
+    width: 500px;
+}
+
+.cart-info.quantity {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.btn-increment-decrement {
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    width: 50px;
+    height: 40px;
+    border-radius: 0;
+}
+
+.input-quantity {
+    padding: 5px 0px;
+    text-align: center;
+    margin-left: 1px;
+    margin-bottom: 10px;
+    width: 50px;
+    height: 40px;
+    border-radius: 0;
+}

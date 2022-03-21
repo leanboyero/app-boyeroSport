@@ -2,7 +2,7 @@
     width: 100%;
     height: 100vh;
     min-height: 300px;
-    background: #37517e;
+    background: #fff;
 }
 
 #home .container {
@@ -14,5 +14,5 @@
     font-size: 48px;
     font-weight: 700;
     line-height: 56px;
-    color: #fff;
+    color: #37517e;;
 }
