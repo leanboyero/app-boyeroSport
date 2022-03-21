@@ -22,10 +22,6 @@ const ItemCount = ({stock, inicial}) =>{
       setContador(contador + 1);
     }
 
-    const onchangeText = (contador) =>{
-        setContador(contador);
-    }
-
     const onAdd = ()=> {
             console.log(`Ha agregado al carrito cantidad ${contador}  del producto.`);
     }
@@ -38,7 +34,7 @@ const ItemCount = ({stock, inicial}) =>{
          </Card.Text>
          <div className="cart-info quantity">
             <Button className="btn-increment-decrement" onClick={()=>clickResta()}>-</Button>
-            <input type="text" value={contador} className='input-quantity' inputMode="numeric" onChange={text => onchangeText(text)}/>
+            <input type="text" value={contador} className='input-quantity' inputMode="numeric" readOnly/>
             <Button className="btn-increment-decrement" onClick={()=>clickSuma()}>+</Button>
          </div>
         <Button variant="success" onClick={()=>onAdd()}>Agregar al carrito</Button>
