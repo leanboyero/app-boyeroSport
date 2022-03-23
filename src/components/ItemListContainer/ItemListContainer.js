@@ -37,7 +37,7 @@ const ItemListContainer = (props) => {
     
         useEffect(() => {
             setLoading(true);
-            getProducts()
+            getProducts
             .then((response) => setProductList(response))
             .catch((error) =>console.log(error))
             .finally(()=> setLoading(false))
