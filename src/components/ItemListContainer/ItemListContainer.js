@@ -5,7 +5,7 @@ import React, {useEffect, useState} from 'react';
 import ItemList from '../ItemList/ItemList';
 
 const ItemListContainer = (props) => {
-    const {greeting} = props;
+    const {title} = props;
     
     const [productList, setProductList] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -49,7 +49,7 @@ const ItemListContainer = (props) => {
     return (
     <div className="container">
         <div className="row">
-        <h1>{greeting}</h1> 
+        <h1>{title}</h1> 
         </div>
        {loading ?  <p>Cargando productos...</p>: <ItemList productList={productList} />   }
     </div>

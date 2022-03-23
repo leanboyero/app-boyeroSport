@@ -7,7 +7,7 @@ const Item = ({product}) => {
   return (
     <div className='col-sm-3'>
     <Card>
-    <Card.Img variant="top" src={product.image}  width='400' height='400'/>
+    <Card.Img variant="top" src={product.image} max-width="240" max-height="320"/>
     <Card.Body>
       <Card.Text>
        {product.name}
