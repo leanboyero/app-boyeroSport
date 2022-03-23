@@ -6,14 +6,14 @@ import NavBar from './components/NavBar/NavBar';
 import React from 'react';
 
 const App = () => {
-
+const saludo = "Ofertas";
   return (
     <div className="App">
         <header id="header" className="fixed-top ">
           <NavBar fixed="top"/>
         </header>
         <section id="home" className="d-flex align-items-center">
-          <ItemListContainer greeting="Bienvenido a Boyero Sport" />
+          <ItemListContainer greeting={saludo} />
         </section>
     </div>
 
