@@ -1,29 +1,36 @@
-.item-count{
-    padding: 30px;
-    box-shadow: 0px 0 30px rgb(55 81 126 / 8%);
-    width: 500px;
+.input-spinner {
+    padding-right: 15px;
+    margin: 0 0 20px;
+    max-width: 140px;
+    flex-wrap: nowrap;
+    display: inline-flex;
 }
 
-.cart-info.quantity {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-.btn-increment-decrement {
-    display: inline-block;
-    text-align: center;
-    cursor: pointer;
-    width: 50px;
-    height: 40px;
-    border-radius: 0;
+.btn-light {
+    background-color: #fff;
+    border-color: #dee2e6;
+    color:  rgb(153, 153, 153);
+    font-weight: 600;
 }
 
-.input-quantity {
-    padding: 5px 0px;
+.btn-light:hover {
+    border-color: #c1c9d0;
+    color: #0d6efd;
+}
+
+.input-spinner .btn {
+    width: 42px;
     text-align: center;
-    margin-left: 1px;
-    margin-bottom: 10px;
-    width: 50px;
-    height: 40px;
-    border-radius: 0;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+.input-spinner input.form-control {
+    text-align: center;
+    border-color: #dee2e6;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.form-control:not(:focus):hover, .form-select:not(:focus):hover {
+    border-color: #6ea8fe;
 }

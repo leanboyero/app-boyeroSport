@@ -1,7 +1,8 @@
 import './ItemCount.css'
 
-import { Button, Card } from 'react-bootstrap';
+import * as Icon from 'react-bootstrap-icons';
 
+import { Button } from 'react-bootstrap';
 import { useState } from 'react';
 
 const ItemCount = ({stock, inicial}) =>{
@@ -27,19 +28,19 @@ const ItemCount = ({stock, inicial}) =>{
     }
 
     return (
-    <Card className='item-count'>
-        <Card.Body variant="right">
-          <Card.Title>Detalle de producto</Card.Title>
-          <Card.Text>
-         </Card.Text>
-         <div className="cart-info quantity">
-            <Button className="btn-increment-decrement" onClick={()=>clickResta()}>-</Button>
-            <input type="text" value={contador} className='input-quantity' inputMode="numeric" readOnly/>
-            <Button className="btn-increment-decrement" onClick={()=>clickSuma()}>+</Button>
-         </div>
-        <Button variant="success" onClick={()=>onAdd()}>Agregar al carrito</Button>
-       </Card.Body>
-    </Card>
+      <div className="row mb-4">
+          <div className="col-md-4 col-6 mb-2" >
+           <label className="form-label">Cantidad</label>
+           <div className="input-group input-spinner">
+              <Button className="btn btn-icon btn-light" onClick={()=>clickResta()}>-</Button>
+               <input type="text" value={contador} className='form-control text-center' inputMode="numeric" readOnly/>
+               <Button className="btn btn-icon btn-light" onClick={()=>clickSuma()}>+</Button>
+            </div>
+            <div className="actions">
+                <Button variant="primary" onClick={()=>onAdd()}><Icon.Cart  color="#fff" size={18}/> Agregar al carrito</Button>
+            </div>
+          </div>   
+    </div>
     );
 }
 

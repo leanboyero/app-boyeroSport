@@ -5,14 +5,14 @@ import React from 'react';
 
 const Item = ({product}) => {
   return (
-    <div className='col-sm-3'>
+    <div className='col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6'>
     <Card>
-    <Card.Img variant="top" src={product.image} max-width="240" max-height="320"/>
+    <Card.Img variant="top" src={product.images[0].image} max-width="240" max-height="320"/>
     <Card.Body>
-      <Card.Text>
+    <Card.Title>{product.price}</Card.Title>
+      <Card.Text className='title text-truncate'>
        {product.name}
       </Card.Text>
-      <Card.Title>{product.price}</Card.Title>
     </Card.Body>
   </Card>
   </div>

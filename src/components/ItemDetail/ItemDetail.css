@@ -1,0 +1,45 @@
+.detail{
+    text-align: left;
+}
+.price{
+    text-align: left;    
+    font-weight: 600;
+    font-size: 30px;
+    color: #149ad9;
+}
+
+.image-list{
+    width: 448px;
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+    display: -webkit-flex; 
+    display: flex; 
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+
+.product-content {
+    position: relative;
+    margin: 0 0 2rem;
+    overflow: hidden;
+}
+
+.payments-link{
+    margin-top: 8px;
+    display: -webkit-flex;
+    display: flex;
+    font-size: 14px;
+    font-weight: 400;
+    padding-bottom: 20px;
+}
+
+.payments-link button{
+    color: #000;
+    text-decoration: none;
+    border: 0;
+    background: #fff;
+}
+
+.payments-link button:hover, .credit-card:hover{
+    color: #149ad9;
+}

@@ -15,10 +15,6 @@ a:hover {
   text-decoration: none;
 }
 
-.App {
-  text-align: center;
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -37,7 +33,9 @@ a:hover {
   background: rgba(40, 58, 90, 0.9);
 }
 
-
+.App{
+  text-align: center;
+}
 .App-link {
   color: #61dafb;
 }
@@ -53,4 +51,53 @@ a:hover {
 
 #header.header-scrolled, #header.header-inner-pages {
   background: rgba(40, 58, 90, 0.9);
+}
+
+h3 {
+  font-size: 28px;
+  text-transform: uppercase;
+  font-weight: 520;
+  position: relative;
+  padding-bottom: 15px;
+  text-align: center;
+}
+
+h3::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: #47b2e4;
+  bottom: 0;
+  left: calc(50% - 20px);
+}
+
+h3::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 120px;
+  height: 1px;
+  background: #ddd;
+  bottom: 1px;
+  left: calc(50% - 60px);
+}
+
+.h5 {
+  margin-top: 0;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #212529;
+  font-size: 1.25rem;
+}
+
+b, strong {
+  font-weight: 700;
+}
+
+#detail{
+  padding: 60px 0 40px 0;
+  position: relative;
 }
