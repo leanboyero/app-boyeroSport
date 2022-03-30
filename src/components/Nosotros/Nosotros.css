@@ -1,0 +1,31 @@
+h1::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #47b2e4;
+    bottom: 0;
+    left: calc(50% - 20px);
+  }
+  
+  h1::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 120px;
+    height: 1px;
+    background: #ddd;
+    bottom: 1px;
+    left: calc(50% - 60px);
+  }
+
+#nosotros h1{
+    font-size: 48px;
+    font-weight: 520;
+    position: relative;
+    padding-bottom: 0px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 40px;
+  }

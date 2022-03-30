@@ -1,0 +1,26 @@
+#home {
+    width: 100%;
+    background: #fff;
+    flex: 1;
+    height: 100%;
+    position: relative;
+    top: 0px;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+  }
+  
+  #home .container {
+    padding-top: 0px;
+    width: 100%;
+    padding-right: var(--bs-gutter-x,.75rem);
+    padding-left: var(--bs-gutter-x,.75rem);
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .w-100 {
+    width: 1905px;
+    height: 496px;
+}

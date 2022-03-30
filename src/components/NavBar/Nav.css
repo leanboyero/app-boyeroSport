@@ -7,25 +7,25 @@
   padding-top: 0;
   padding-bottom: 0;
   border: none;
-  background-color: #08152b;;
+  background-color: #002b72e8;
 }
 .navbar a {
     padding: 10px 20px;
-    font-size: 15px;
+    font-size: 13px;
     text-transform: none;
-    font-weight: 500;
+    font-weight: 600;
     color: #0c3c53;
   }
+.navbar-dark .navbar-nav .nav-link {
+    color: rgb(255 255 255 / 84%);
+    text-transform: uppercase;
+}
 
-  .nav-item, .navbar.nav-link{
+.nav-item, .navbar.nav-link{
     padding: 0 10px;
-  }
+}
 
-  .navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
-    color: #47b2e4;
-  }
-  
-  .navbar .buttonLogin, .navbar .buttonLogin:focus {
+.navbar .buttonLogin, .navbar .buttonLogin:focus {
     padding: 8px 20px;
     border-radius: 50px;
     color: #fff;
@@ -34,18 +34,27 @@
     font-weight: 500;
     text-transform: none;
     text-decoration: none;
-  }
-
-  .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .show>.nav-link {
-    color: #149ad9;
 }
   
-  .navbar .buttonLogin:hover, .navbar .buttonLogin:focus:hover {
+.navbar .buttonLogin:hover, .navbar .buttonLogin:focus:hover {
     color: #fff;
     background: #149ad9;
-  }
+}
 
-  .buttonLogin nav-link active{
+.buttonLogin nav-link active{
     color: #fff;
-  }
+}
+
+.active, .dot:hover {
+    background-color: #71717100;
+}
+
+.navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .show>.nav-link {
+    color: rgb(255 255 255 / 84%);
+}
+
+.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
+  color: #149ad9;
+}
+
 

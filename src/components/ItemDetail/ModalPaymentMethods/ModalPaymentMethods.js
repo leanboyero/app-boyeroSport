@@ -15,19 +15,19 @@ const ModalPaymentMethods = (props) =>{
            <div className='ui-vip-payment_methods'>
              <p><span className="blue">Hasta 6 cuotas sin interés</span> con estos bancos</p>
             <div className='ui-pdp-payment-icon'>
-                    <img src="assents/images/cards_credit.png" alt="card credit" />
+                    <img src="/assents/images/cards_credit.png" alt="card credit" />
             </div>
            </div>
            <div className='ui-vip-payment_methods'>
              <p>O hasta 12 cuotas con interés</p>
             <div className='ui-pdp-payment-icon'>
-                    <img src="assents/images/cards_credit2.png" alt="card credit 2" />
+                    <img src="/assents/images/cards_credit2.png" alt="card credit 2" />
             </div>
            </div>
            <div className='ui-vip-payment_methods'>
              <h5>Tarjetas de débito</h5>
             <div className='ui-pdp-payment-icon'>
-                    <img src="assents/images//card_debit.png" alt="card debit" />
+                    <img src="/assents/images/card_debit.png" alt="card debit" />
             </div>
            </div>
            <div className='ui-vip-payment_methods'>

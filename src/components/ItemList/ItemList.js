@@ -3,9 +3,9 @@ import React from 'react'
 
 const ItemList = ({productList}) => {
   return (
-    <div className='row'>
-        {productList.map((product)=>  <Item product={product} key={product.id}/>)}     
-    </div>
+    <>
+        {productList.map((product)=>  <Item product={product} key={product.id}/>)}  
+   </>
   )
 }
 

@@ -18,7 +18,7 @@ const ImageList = ({images}) => {
     <Carousel
              data={images}
              time={0}
-             width="850px"
+             width="100%"
              height="500px"
              captionStyle={captionStyle}
              radius="10px"
@@ -35,8 +35,6 @@ const ImageList = ({images}) => {
              thumbnailWidth="100px"
              style={{
                textAlign: "center",
-               maxWidth: "850px",
-               maxHeight: "500px",
                margin: "40px auto",
              }}
            />

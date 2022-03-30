@@ -6,6 +6,7 @@ import React,{useState} from 'react';
 
 import ImageList from '../ImageList/ImageList';
 import ItemCount from '../ItemCount/ItemCount';
+import { Link } from 'react-router-dom';
 import ModalPaymentMethods from './ModalPaymentMethods/ModalPaymentMethods';
 
 const ItemDetail = ({productDatail}) => {
@@ -19,7 +20,13 @@ const ItemDetail = ({productDatail}) => {
     };
 
   return (
-    <div className='row detail'>
+    <>  <nav aria-label="breadcrumb">
+    <ol className="breadcrumb">
+       <li className="breadcrumb-item"><Link to={"/"}>Home</Link></li>
+       <li className="breadcrumb-item"><Link to={`/category/${productDatail.category}`}>{productDatail.category}</Link></li>
+       <li className="breadcrumb-item active" aria-current="page">{productDatail.name}</li>
+    </ol>
+     </nav>
          <div className='col-lg-6'>
              {productDatail.images ? (<ImageList images={productDatail.images} />) : ''}       
          </div>
@@ -39,7 +46,7 @@ const ItemDetail = ({productDatail}) => {
              </div>
          </div>
          <ModalPaymentMethods show={modalVisible} onHide={() => {setModalVisible(!modalVisible)}}  />
-    </div>
+         </>
   )
 }
 
