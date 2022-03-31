@@ -43,3 +43,14 @@
 .payments-link button:hover, .credit-card:hover{
     color: #149ad9;
 }
+
+.detail .breadcrumb-item{
+    color: rgb(55, 81, 126);
+    font-weight: 500;
+    cursor:pointer;
+}
+
+.detail .breadcrumb-item:hover{
+    color: #149ad9;
+    font-weight: 500;
+}

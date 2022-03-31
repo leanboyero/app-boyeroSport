@@ -6,26 +6,30 @@ import React,{useState} from 'react';
 
 import ImageList from '../ImageList/ImageList';
 import ItemCount from '../ItemCount/ItemCount';
-import { Link } from 'react-router-dom';
 import ModalPaymentMethods from './ModalPaymentMethods/ModalPaymentMethods';
+import { useNavigate } from 'react-router-dom';
 
 const ItemDetail = ({productDatail}) => {
     const inicial = 1;
     const stock = 10;
 
     const [modalVisible, setModalVisible] = useState(false);
+    const navigate = useNavigate();
 
     const modalHandle = ()=> {
       setModalVisible(!modalVisible);
     };
 
+    const backHandle = ()=> {
+      navigate(-1);
+    }
+
+
   return (
     <>  <nav aria-label="breadcrumb">
-    <ol className="breadcrumb">
-       <li className="breadcrumb-item"><Link to={"/"}>Home</Link></li>
-       <li className="breadcrumb-item"><Link to={`/category/${productDatail.category}`}>{productDatail.category}</Link></li>
-       <li className="breadcrumb-item active" aria-current="page">{productDatail.name}</li>
-    </ol>
+         <ol className="breadcrumb">
+                   <li className="breadcrumb-item" onClick={backHandle}><h5><Icon.ArrowLeft size={27} />{ }Volver</h5></li>
+        </ol>
      </nav>
          <div className='col-lg-6'>
              {productDatail.images ? (<ImageList images={productDatail.images} />) : ''}       
