@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# Boyero Sport 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Boyero Sport** es  un e-commerce para la venta de ropa y artículos deportivos desarrollado en React Js
 
-## Available Scripts
+Este presenta 
 
-In the project directory, you can run:
+ - Registro y login de usuarios: los campos son validados al realizar el registro.
+- Filtro por categorías: tomando las categorías de la base de datos se generan filtros de productos.
+- Filtro por marcas: tomando las marcas de la base de datos se generan filtros de productos.
+- Filtro por disciplina deportiva: tomando las disciplinas de la base de datos se generan filtros de productos.
+-  Carrito de compras:  agregar items, vista completa de los items del carrito, su total, y opcionalmente quitar un producto del carrito.
+- Vistas de listas de productos: vista general de productos con foto y detalles mínimos.
+- Vista de detalles: vista con todos los detalles del producto , la opción de agregar una cantidad del mismo y seleccionar talle o tamaño deseado.
+-  Control de stock: Valida que los usuarios no puedan agregar más items al carrito de los que hay disponibles, y revisa el stock real al momento de generar la compra.
 
-### `npm start`
+## Instalación
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+ 1. Forkeá y cloná el repositorio
+ 2. Desde el directorio raiz del proyecto (Ej /app-boyeroSport) ejecutar el comando
+ ```
+   npm install
+   ```
+para instalar todas las dependecias del proyecto.
+   
+ 4. Ejecutar la aplicación en el modo de desarrollo.
+    Se abre desde http://localhost:3000 para verlo en su navegador.
+   ```
+   npm start
+   ```
+    
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Dependencias
 
-### `npm test`
+El proyecto en su desarrollo presenta las siguientes dependencias:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- css bootstrap para dar estilo a la aplicación.
+ - react-bootstrap para aprovechar los componentes de bootstrap. 
+ - react-bootstrap-icons para hacer uso de los iconos de bootstrap.
+ - react-carousel-minimal para visualizar las diferentes images de cada uno de los productos. 
+ - react-elastic-carousel  dentro del home para el slider de productos recomendados y ofertas recientes de las marcas.
+ - react-router-dom para la navegación.
+ - firebase  para persistencia de datos.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Aplicación en funcionamiento
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Autor
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Leandro Ezequiel Boyero
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+2022 - Curso de React Js en CoderHouse
