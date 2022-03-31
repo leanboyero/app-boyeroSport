@@ -16,6 +16,13 @@
 .btn-light:hover {
     border-color: #c1c9d0;
     color: #0d6efd;
+    background-color: #fff;
+}
+
+.btn-light:focus {
+    border-color: #c1c9d0;
+    color: #0d6efd;
+    background-color: #fff;
 }
 
 .input-spinner .btn {
