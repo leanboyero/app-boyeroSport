@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
 import ItemDetail from '../ItemDetail/ItemDetail';
+import Loading from '../Loading/Loading';
 import { getProducts } from '../../mocks/fakeApi';
 import { useParams } from 'react-router-dom';
 
@@ -21,7 +22,7 @@ const ItemDetailContainer = () => {
 
   return (
          <div className="row container detail">
-           {loading ? <p>Cargando un producto...</p>: <ItemDetail productDatail={product} />}
+           {loading ? <Loading  text="Cargando un producto" /> : <ItemDetail productDatail={product} />}
          </div>
   );
 };

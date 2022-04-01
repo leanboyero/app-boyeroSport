@@ -4,6 +4,7 @@ import * as Icon from 'react-bootstrap-icons';
 
 import { Link } from 'react-router-dom';
 import React from 'react';
+import logo from '../../logo.png';
 
 const Footer = () => {
   return (
@@ -27,7 +28,7 @@ const Footer = () => {
 
         <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
           <h6 className="text-uppercase fw-bold mb-4">
-          LOGO BOYERO SPORT
+          <img src={logo} width="150" height="45" className="align-top" alt="logo"/>
           </h6>
           <p className="text-start">
             Calle 1234, CABA, Argentina

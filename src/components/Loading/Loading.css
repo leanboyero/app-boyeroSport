@@ -1,3 +1,15 @@
 .loading-text{
 color: #149ad9;
 }
+.spinner-border {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    vertical-align: -0.125em;
+    border: 0.25em solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: .75s linear infinite spinner-border;
+    margin: 0px auto;
+    padding: 0px 0px;
+}

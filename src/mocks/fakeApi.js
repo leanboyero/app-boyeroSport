@@ -291,7 +291,7 @@ export const getProducts = new Promise ((resolve, reject) => {
     if (condition){
         setTimeout(()=>{
                 resolve(products);
-        },3000);
+        },2000);
     }else{
         reject('No se obtuvieron los productos.');
     }
