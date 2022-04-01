@@ -4,7 +4,7 @@ import * as Icon from 'react-bootstrap-icons';
 
 import { Link } from 'react-router-dom';
 import React from 'react';
-import logo from '../../logo.png';
+import logo from '../../logoFooter.png';
 
 const Footer = () => {
   return (
