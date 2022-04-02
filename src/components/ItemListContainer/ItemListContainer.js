@@ -11,36 +11,33 @@ const ItemListContainer = ({title='Ofertas'}) => {
     const [productList, setProductList] = useState([]);
     const [loading, setLoading] = useState(false);
     const [text,setText] = useState('');
-    const {categoryId, disciplineId, brandId} = useParams();
+    const {variable, id} = useParams();
  
     useEffect(() => {
             setLoading(true)
             getProducts
             .then((response) => {
-                if (categoryId){
-                    setText(categoryId);
-                    setProductList(response.filter(product => product.category === categoryId));
-                }else {
-                    if (disciplineId){
-                        setText(disciplineId);
-                         setProductList(response.filter(product => product.discipline === disciplineId));
-                   }else {
-                       if(brandId){
-                        setText(brandId);
-                        setProductList(response.filter(product => product.brand === brandId));
-                       }else{
+                setText(id);
+                switch (variable) {
+                    case 'category':           
+                        setProductList(response.filter(product => product.category === id));
+                        break;
+                    case 'discipline':
+                        setProductList(response.filter(product => product.discipline === id));
+                        break;
+                    case 'brand':
+                        setProductList(response.filter(product => product.brand === id));
+                        break;
+                    default:
                         setText(title);
                         setProductList(response);
-                       }
-
                   }
-               }
 
             })
             .catch((error) =>console.log(error))
             .finally(()=> setLoading(false))
 
-    }, [categoryId, disciplineId, brandId]);
+    }, [variable, id, title]);
 
     return (
         <> 

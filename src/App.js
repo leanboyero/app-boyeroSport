@@ -21,16 +21,13 @@ const App = () => {
         <header id="header" className="fixed-top ">
           <NavBar fixed="top"/>
         </header>
-
         <section id={sampleLocation.pathname==='/' ? 'home':'page'} className="align-items-center" >
         <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/ofertas" element={<ItemListContainer title="Ofertas"/>} />
         <Route path="/contacto" element={<Contact/>} />
         <Route path="/nosotros" element={<Nosotros/>} />
-        <Route path="/category/:categoryId" element={<ItemListContainer />} />
-        <Route path="/discipline/:disciplineId" element={<ItemListContainer />} />
-        <Route path="/brand/:brandId" element={<ItemListContainer />} />
+        <Route path="/:variable/:id" element={<ItemListContainer/>} />
         <Route path="/detail/:itemId" element={<ItemDetailContainer/>} />
         <Route path="*" element={<Navigate to={"/"} />} />
       </Routes>
