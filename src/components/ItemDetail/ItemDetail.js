@@ -2,19 +2,25 @@ import './ItemDetail.css';
 
 import * as Icon from 'react-bootstrap-icons';
 
-import React,{useState} from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import React, {useState} from 'react';
 
 import ImageList from '../ImageList/ImageList';
 import ItemCount from '../ItemCount/ItemCount';
 import ModalPaymentMethods from './ModalPaymentMethods/ModalPaymentMethods';
-import { useNavigate } from 'react-router-dom';
+import Select from '../Select/Select';
 
 const ItemDetail = ({productDatail}) => {
     const inicial = 1;
-    const stock = 10;
+    const {id, name, price, images, stock, description, sizes} = productDatail;
 
     const [modalVisible, setModalVisible] = useState(false);
     const navigate = useNavigate();
+
+    const sizeInicial = sizes ? sizes[0] : '';
+    const [selectedSize, setSelectedSize] = useState(sizeInicial);
+
+    const [isInCart, setIsInCart] = useState(false);
 
     const modalHandle = ()=> {
       setModalVisible(!modalVisible);
@@ -22,6 +28,20 @@ const ItemDetail = ({productDatail}) => {
 
     const backHandle = ()=> {
       navigate(-1);
+    }
+
+    const [quantity, setQuantity] = useState(1);
+
+    const addToCart = ()=> {
+      const itemToAdd ={
+        id,
+        name,
+        price,
+        quantity,
+        selectedSize,
+      };
+      console.log(itemToAdd);
+      setIsInCart(true);
     }
 
 
@@ -32,27 +52,37 @@ const ItemDetail = ({productDatail}) => {
         </ol>
      </nav>
          <div className='col-lg-6'>
-             {productDatail.images ? (<ImageList images={productDatail.images} />) : ''}       
+             { images ? (<ImageList images={images} />) : ''}       
          </div>
          <div className='col-md-6'>
              <div className='product-content'>
-                <h4 className="title text-dark">{productDatail.name}</h4>
+                <h4 className="title text-dark">{name}</h4>
                 <p>
-                {productDatail.description}
+                {description}
                 </p>
                 <div className="mb-3"> 
-                    <div className="price h5">{productDatail.price}</div>
+                    <div className="price h5">{price}</div>
                </div>
                <div className='payments-link'>
                <button onClick={()=> modalHandle()}><Icon.CreditCard  className='credit-card' color="#000" size={15} /> Ver los medios de pago</button>
                </div>
-                <ItemCount stock={stock} inicial={inicial} />
+              { !isInCart ? 
+                  (<>
+                     {sizes ? (<Select options={sizes} onSelect={setSelectedSize}/>) :''}
+                     <ItemCount  stockMax={stock} inicial={inicial} quantity={quantity} setQuantity={setQuantity} addToCart={addToCart} />
+                  </>)
+                  : (<>
+                     <p>Talle: {selectedSize}</p>
+                     <p>Cantidad: {quantity}</p>
+                     <Link to={"/cart"} className="btn btn-success" >Terminar compra</Link></>
+                  )
+              }
+
              </div>
          </div>
-         <ModalPaymentMethods show={modalVisible} onHide={() => {setModalVisible(!modalVisible)}}  />
+         <ModalPaymentMethods show={modalVisible} onHide={() => {setModalVisible(!modalVisible)}}/>
          </>
   )
 }
-
 
 export default ItemDetail;

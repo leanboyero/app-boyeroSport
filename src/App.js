@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 
+import Cart from './components/Cart/Cart';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
@@ -29,6 +30,7 @@ const App = () => {
         <Route path="/nosotros" element={<Nosotros/>} />
         <Route path="/:variable/:id" element={<ItemListContainer/>} />
         <Route path="/detail/:itemId" element={<ItemDetailContainer/>} />
+        <Route path="/cart" element={<Cart/>} />
         <Route path="*" element={<Navigate to={"/"} />} />
       </Routes>
       </section>

@@ -7,6 +7,7 @@ const products = [
        "brand": "pony",
        "price":"$6.999,00",
        "sizes":["39", "40",  "41", "42", "43", "44", "45"],
+       "stock":20,
        "images":[
           {
              "id":1,
@@ -35,6 +36,7 @@ const products = [
        "brand": "nike",
        "price":"$2.499,00",
        "sizes":["S", "M", "L", "XL"],
+       "stock":30,
        "images":[
           {
              "id":1,
@@ -55,6 +57,7 @@ const products = [
        "brand": "nike",
        "price":"$2.499,00",
        "sizes":["S", "M", "L", "XL"],
+       "stock":30,
        "images":[
           {
              "id":1,
@@ -71,6 +74,7 @@ const products = [
        "brand": "under armour",
        "price":"$2.749,00",
        "sizes":null,
+       "stock":30,
        "images":[
           {
              "id":1,
@@ -91,6 +95,7 @@ const products = [
        "brand": "pony",
        "price":"$6.999,0",
        "sizes":[ "39", "40","41","42","43", "44","45"],
+       "stock":50,
        "images":[
           {
              "id":1,
@@ -119,6 +124,7 @@ const products = [
        "brand": "kappa",
        "price":"$2.799,00",
        "sizes":["S", "M", "L", "XL"],
+       "stock":10,
        "images":[
           {
              "id":1,
@@ -143,6 +149,7 @@ const products = [
        "brand": "adidas",
        "price":"$7.999,00",
        "sizes":[4, 5],
+       "stock":4,
        "images":[
           {
              "id":1,
@@ -171,6 +178,7 @@ const products = [
        "brand": "kappa",
        "price":"$6.999,00",
        "sizes":[35, 36, 37, 38, 39, 40, 41],
+       "stock": 12,
        "images":[
           {
              "id":1,
@@ -195,6 +203,7 @@ const products = [
        "brand": "nike",
        "price":"$4.999,00",
        "sizes":["S", "M", "L", "XL"],
+       "stock": 50,
        "images":[
           {
              "id":1,
@@ -223,6 +232,7 @@ const products = [
        "brand": "under armour",
        "price":"$10.999,00",
        "sizes":["S", "M"],
+       "stock": 25,
        "images":[
           {
              "id":1,
@@ -247,6 +257,7 @@ const products = [
        "brand": "nike",
        "price":"$7.299,00",
        "sizes":["S", "M", "L", "XL"],
+       "stock": 25,
        "images":[
           {
              "id":1,
@@ -270,8 +281,8 @@ const products = [
        "discipline": "fútbol",
        "brand": "adidas",
        "price":"$6.799,00",
-       "sizes":["S", "M", "L", "XL","XXL"
-       ],
+       "sizes":["S", "M", "L", "XL","XXL"],
+       "stock": 16,
        "images":[
           {
              "id":1,

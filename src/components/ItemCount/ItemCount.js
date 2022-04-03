@@ -3,28 +3,22 @@ import './ItemCount.css'
 import * as Icon from 'react-bootstrap-icons';
 
 import { Button } from 'react-bootstrap';
-import { useState } from 'react';
 
-const ItemCount = ({stock, inicial}) =>{
+const ItemCount = ({stockMax=10, inicial, quantity, setQuantity, addToCart}) =>{
 
-    const [contador, setContador] = useState(inicial);
 
-    const clickResta = ()=>{
-      if(contador===inicial){
+    const handleRestar = ()=>{
+      if(quantity===inicial){
           return;
       }
-      setContador(contador - 1);
+      setQuantity(quantity - 1);
     };
 
-    const clickSuma =() => {
-      if(contador===stock){
+    const handleSumar =() => {
+      if(quantity===stockMax){
          return;
       }
-      setContador(contador + 1);
-    }
-
-    const onAdd = ()=> {
-            console.log(`Ha agregado al carrito cantidad ${contador}  del producto.`);
+      setQuantity(quantity + 1);
     }
 
     return (
@@ -32,12 +26,12 @@ const ItemCount = ({stock, inicial}) =>{
           <div className="col-md-4 col-6 mb-2" >
            <label className="form-label">Cantidad</label>
            <div className="input-group input-spinner">
-              <Button className="btn btn-icon btn-light" onClick={()=>clickResta()}>-</Button>
-               <input type="text" value={contador} className='form-control text-center' inputMode="numeric" readOnly/>
-               <Button className="btn btn-icon btn-light" onClick={()=>clickSuma()}>+</Button>
+              <Button className="btn btn-icon btn-light" onClick={()=>handleRestar()} >-</Button>
+               <input type="text" value={quantity} className='form-control text-center' inputMode="numeric" readOnly/>
+               <Button className="btn btn-icon btn-light" onClick={()=>handleSumar()}>+</Button>
             </div>
             <div className="actions">
-                <Button variant="primary" onClick={()=>onAdd()}><Icon.Cart  color="#fff" size={18}/> Agregar al carrito</Button>
+                <Button variant="primary" onClick={addToCart} ><Icon.Cart  color="#fff" size={18}/> Agregar al carrito</Button>
             </div>
           </div>   
     </div>
