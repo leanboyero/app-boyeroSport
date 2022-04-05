@@ -30,7 +30,7 @@ const Footer = () => {
           <h6 className="text-uppercase fw-bold mb-4">
           <img src={logo} width="150" height="45" className="align-top" alt="logo"/>
           </h6>
-          <p className="text-start">
+          <p>
             Calle 1234, CABA, Argentina
           </p>
           <h5>DE LUNES A VIERNES DE 10 A 18 HS SÁBADOS DE 10 A 14 HS</h5>
