@@ -3,14 +3,18 @@ import './ItemDetail.css';
 import * as Icon from 'react-bootstrap-icons';
 
 import { Link, useNavigate } from 'react-router-dom';
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 
+import { CartContext } from '../../context/CartContext';
 import ImageList from '../ImageList/ImageList';
 import ItemCount from '../ItemCount/ItemCount';
 import ModalPaymentMethods from './ModalPaymentMethods/ModalPaymentMethods';
 import Select from '../Select/Select';
 
 const ItemDetail = ({productDatail}) => {
+
+    const {addItem, isInCart} = useContext(CartContext);
+
     const inicial = 1;
     const {id, name, price, images, stock, description, sizes} = productDatail;
 
@@ -20,8 +24,6 @@ const ItemDetail = ({productDatail}) => {
     const sizeInicial = sizes ? sizes[0] : '';
     const [selectedSize, setSelectedSize] = useState(sizeInicial);
 
-    const [isInCart, setIsInCart] = useState(false);
-
     const modalHandle = ()=> {
       setModalVisible(!modalVisible);
     };
@@ -30,7 +32,7 @@ const ItemDetail = ({productDatail}) => {
       navigate(-1);
     }
 
-    const [quantity, setQuantity] = useState(1);
+    const [quantity, setQuantity] = useState(1);  
 
     const addToCart = ()=> {
       const itemToAdd ={
@@ -39,9 +41,10 @@ const ItemDetail = ({productDatail}) => {
         price,
         quantity,
         selectedSize,
+        images
       };
-      console.log(itemToAdd);
-      setIsInCart(true);
+
+      addItem(itemToAdd);
     }
 
 
@@ -66,7 +69,7 @@ const ItemDetail = ({productDatail}) => {
                <div className='payments-link'>
                <button onClick={()=> modalHandle()}><Icon.CreditCard  className='credit-card' color="#000" size={15} /> Ver los medios de pago</button>
                </div>
-              { !isInCart ? 
+              { !isInCart(id) ? 
                   (<>
                      {sizes ? (<Select options={sizes} onSelect={setSelectedSize}/>) :''}
                      <ItemCount  stockMax={stock} inicial={inicial} quantity={quantity} setQuantity={setQuantity} addToCart={addToCart} />

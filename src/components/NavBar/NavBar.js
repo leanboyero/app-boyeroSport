@@ -54,7 +54,7 @@ const NavBar = () =>{
       <a href="#login" className='buttonLogin'>Iniciar sesión</a>
       </Nav>
       <Nav className="me-auto">
-      <Nav.Link href="#carrito">
+      <Nav.Link as={Link} to="/cart">
       <Cartwidget/>
       </Nav.Link>
       </Nav>

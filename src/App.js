@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 
 import Cart from './components/Cart/Cart';
+import { CartProvider } from './context/CartContext';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
@@ -18,11 +19,12 @@ const App = () => {
   const sampleLocation = useLocation();
 
   return (
+    <CartProvider>
     <div className="App">
         <header id="header" className="fixed-top ">
           <NavBar fixed="top"/>
         </header>
-        <section id={sampleLocation.pathname==='/' ? 'home':'page'} className="align-items-center" >
+        <section id={sampleLocation.pathname==='/' ? 'home':'page'} className="align-items-center">
         <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/ofertas" element={<ItemListContainer title="Ofertas"/>} />
@@ -36,7 +38,7 @@ const App = () => {
       </section>
       <Footer/>
   </div>
-
+  </CartProvider>
   );
 }
 
