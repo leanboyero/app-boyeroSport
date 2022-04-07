@@ -13,7 +13,7 @@ import Select from '../Select/Select';
 
 const ItemDetail = ({productDatail}) => {
 
-    const {addItem, isInCart} = useContext(CartContext);
+    const {addItem} = useContext(CartContext);
 
     const inicial = 1;
     const {id, name, price, images, stock, description, sizes} = productDatail;
@@ -34,6 +34,8 @@ const ItemDetail = ({productDatail}) => {
 
     const [quantity, setQuantity] = useState(1);  
 
+    const [isInCart, setIsInCart] = useState(false);
+
     const addToCart = ()=> {
       const itemToAdd ={
         id,
@@ -44,7 +46,8 @@ const ItemDetail = ({productDatail}) => {
         images
       };
 
-      addItem(itemToAdd);
+      addItem(itemToAdd, quantity, selectedSize);
+      setIsInCart(true);
     }
 
 
@@ -69,7 +72,7 @@ const ItemDetail = ({productDatail}) => {
                <div className='payments-link'>
                <button onClick={()=> modalHandle()}><Icon.CreditCard  className='credit-card' color="#000" size={15} /> Ver los medios de pago</button>
                </div>
-              { !isInCart(id) ? 
+              { !isInCart ? 
                   (<>
                      {sizes ? (<Select options={sizes} onSelect={setSelectedSize}/>) :''}
                      <ItemCount  stockMax={stock} inicial={inicial} quantity={quantity} setQuantity={setQuantity} addToCart={addToCart} />
