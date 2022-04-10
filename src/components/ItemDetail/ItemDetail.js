@@ -37,7 +37,8 @@ const ItemDetail = ({productDatail}) => {
     const [isInCart, setIsInCart] = useState(false);
 
     const addToCart = ()=> {
-      const itemToAdd ={
+
+      const itemToAdd = {
         id,
         name,
         price,
@@ -45,7 +46,6 @@ const ItemDetail = ({productDatail}) => {
         selectedSize,
         images
       };
-
       addItem(itemToAdd, quantity, selectedSize);
       setIsInCart(true);
     }
@@ -67,7 +67,7 @@ const ItemDetail = ({productDatail}) => {
                 {description}
                 </p>
                 <div className="mb-3"> 
-                    <div className="price h5">{price}</div>
+                    <div className="price h5">${price}</div>
                </div>
                <div className='payments-link'>
                <button onClick={()=> modalHandle()}><Icon.CreditCard  className='credit-card' color="#000" size={15} /> Ver los medios de pago</button>

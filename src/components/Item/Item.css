@@ -1,4 +1,4 @@
-.card {
+.item .card {
     background-color: #fff;
     border-color:#fff;
     margin-bottom: 30px;
@@ -13,8 +13,11 @@
     width: 100%;
 }
 
-.card:hover {
-    border-color: silver;
+.item .card:hover {
+    border-left: 1px solid silver;
+    border-right: 1px solid silver;
+    border-bottom: 1px solid silver;
+    border-top: 2px solid #149ad9;
     cursor: pointer;
 }
 
@@ -30,18 +33,18 @@
     top: 0;
 }
 
-.card-text{
+.item .card-text{
 width: 100%;
     height: 45px;
 }
 
-.card-body {
+.item .card-body {
     flex: 1 1 auto;
     padding: 1rem 1.2rem;
     border-top: 1px solid #dee2e6;
 }
 
-.card-title.h5{
+.item .card-title.h5{
     text-align: center;
     color: #149ad9;
 }

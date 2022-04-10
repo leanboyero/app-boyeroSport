@@ -1,0 +1,19 @@
+.cart-items{
+  vertical-align: middle;
+  color: #212529;
+}
+
+.cart-items a{
+  vertical-align: middle;
+  color: #212529;
+}
+
+.cart-product{
+text-align: left;
+
+}
+
+.remove-item:hover {
+  fill: #c90f0f;
+  cursor:pointer;
+}

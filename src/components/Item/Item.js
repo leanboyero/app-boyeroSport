@@ -15,15 +15,15 @@ const Item = ({product}) => {
   }
 
   return (
-    <div className='col-md-3 col-sm-4 col-12'>
+    <div className='col-md-3 col-sm-4 col-12 item'>
     <Card>
     <Link to={`/detail/${id}`}>
     <Card.Img variant="top" src={images[0].image} max-width="240" max-height="320" onMouseOver={(e)=>handleMouseOver(e)} onMouseLeave={(e)=>handleMouseLeave(e)}/>
     <Card.Body>
-    <Card.Title>{price}</Card.Title>
       <Card.Text className='title text-truncate'>
        {name}
       </Card.Text>
+      <Card.Title>${price}</Card.Title>
     </Card.Body>
     </Link>
   </Card>

@@ -5,7 +5,7 @@ const products = [
        "category":"hombre-calzado",
        "discipline":null,
        "brand": "pony",
-       "price":"$6.999,00",
+       "price": 6999,
        "sizes":["39", "40",  "41", "42", "43", "44", "45"],
        "stock":20,
        "images":[
@@ -34,7 +34,7 @@ const products = [
        "category":"niños-indumentaria",
        "discipline": "fÚtbol",
        "brand": "nike",
-       "price":"$2.499,00",
+       "price": 2499,
        "sizes":["S", "M", "L", "XL"],
        "stock":30,
        "images":[
@@ -55,7 +55,7 @@ const products = [
        "category":"niños-indumentaria",
        "discipline": "fÚtbol",
        "brand": "nike",
-       "price":"$2.499,00",
+       "price": 2499,
        "sizes":["S", "M", "L", "XL"],
        "stock":30,
        "images":[
@@ -72,7 +72,7 @@ const products = [
        "category":"hombre-accesorios",
        "discipline": "fÚtbol",
        "brand": "under armour",
-       "price":"$2.749,00",
+       "price": 2749,
        "sizes":null,
        "stock":30,
        "images":[
@@ -93,7 +93,7 @@ const products = [
        "category":"hombre-calzado",
        "discipline": null,
        "brand": "pony",
-       "price":"$6.999,0",
+       "price": 6999,
        "sizes":[ "39", "40","41","42","43", "44","45"],
        "stock":50,
        "images":[
@@ -122,7 +122,7 @@ const products = [
        "category":"hombre-indumentaria",
        "discipline": "fÚtbol",
        "brand": "kappa",
-       "price":"$2.799,00",
+       "price": 2799,
        "sizes":["S", "M", "L", "XL"],
        "stock":10,
        "images":[
@@ -147,7 +147,7 @@ const products = [
        "category":"niños-indumentaria",
        "discipline": null,
        "brand": "adidas",
-       "price":"$7.999,00",
+       "price": 7999,
        "sizes":[4, 5],
        "stock":4,
        "images":[
@@ -176,7 +176,7 @@ const products = [
        "category":"mujer-calzado",
        "discipline": null,
        "brand": "kappa",
-       "price":"$6.999,00",
+       "price": 6999,
        "sizes":[35, 36, 37, 38, 39, 40, 41],
        "stock": 12,
        "images":[
@@ -201,7 +201,7 @@ const products = [
        "category":"niños-indumentaria",
        "discipline": "fútbol",
        "brand": "nike",
-       "price":"$4.999,00",
+       "price": 4999,
        "sizes":["S", "M", "L", "XL"],
        "stock": 50,
        "images":[
@@ -230,7 +230,7 @@ const products = [
        "category":"mujer-indumentaria",
        "discipline": "running",
        "brand": "under armour",
-       "price":"$10.999,00",
+       "price": 10999,
        "sizes":["S", "M"],
        "stock": 25,
        "images":[
@@ -255,7 +255,7 @@ const products = [
        "category":"mujer-indumentaria",
        "discipline": "fútbol",
        "brand": "nike",
-       "price":"$7.299,00",
+       "price": 7299,
        "sizes":["S", "M", "L", "XL"],
        "stock": 25,
        "images":[
@@ -280,7 +280,7 @@ const products = [
        "category":"hombre-indumentaria",
        "discipline": "fútbol",
        "brand": "adidas",
-       "price":"$6.799,00",
+       "price": 6799,
        "sizes":["S", "M", "L", "XL","XXL"],
        "stock": 16,
        "images":[

@@ -8,10 +8,11 @@ import { useContext } from 'react';
 const Cartwidget = () =>{
 
     const {cartQuantity} = useContext(CartContext);
-    return (<><Icon.Cart3  color="#149ad9" size={28}/>
-            <span className='badge badge-warning' id='lblCartCount'> 
-             {cartQuantity()}
-            </span>
+    return (<>
+              <Icon.Cart3  color="#149ad9" size={28}/>
+              <span className='badge badge-warning' id='lblCartCount'> 
+               {cartQuantity() || ''}
+              </span>
             </>);
 }
 
