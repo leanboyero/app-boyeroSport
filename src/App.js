@@ -14,15 +14,27 @@ import NavBar from './components/NavBar/NavBar';
 import Nosotros from './components/Nosotros/Nosotros';
 import React from 'react';
 
+//import { addDoc, collection } from 'firebase/firestore';
+
+//import {data} from './data/data';
+//import {db} from  './firebase/config'
+
 const App = () => {
   
   const sampleLocation = useLocation();
+
+  /*const uploadProducts = () => {
+    data.forEach(async product => {
+     await addDoc(collection(db, "products"), product);
+    });
+  }*/
 
   return (
     <CartProvider>
     <div className="App">
         <header id="header" className="fixed-top ">
           <NavBar fixed="top"/>
+          {/* <button className="btn btn-primary" onClick={uploadProducts}>Insertar productos</button> */}
         </header>
         <section id={sampleLocation.pathname==='/' ? 'home':'page'} className="align-items-center">
         <Routes>

@@ -13,7 +13,7 @@ const Item = ({product}) => {
   const handleMouseLeave = (e) => {
     e.target.src = images[0].image;
   }
-
+  
   return (
     <div className='col-md-3 col-sm-4 col-12 item'>
     <Card>

@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
+import { doc, getDoc } from 'firebase/firestore';
 
 import ItemDetail from '../ItemDetail/ItemDetail';
 import Loading from '../Loading/Loading';
-import { getProducts } from '../../mocks/fakeApi';
+import {db} from  '../../firebase/config';
 import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = () => {
@@ -14,10 +15,14 @@ const ItemDetailContainer = () => {
 
     useEffect(() => {
         setLoading(true)
-        getProducts
-        .then((res) => setProduct(res.find(product => product.id === itemId)))
+        const productRef = doc(db,'products',itemId);
+        getDoc(productRef)
+        .then(doc => {
+             setProduct({id: doc.id, ...doc.data()});
+         })
         .catch((error)=> console.log(error))
-        .finally(()=> setLoading(false))
+        .finally(()=> setLoading(false));
+        
     }, [itemId]);
 
   return (

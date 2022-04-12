@@ -1,10 +1,12 @@
 import { Link, useParams } from 'react-router-dom';
 import React, {useEffect, useState} from 'react';
+import { collection, getDocs, query, where } from 'firebase/firestore';
 
 import ItemList from '../ItemList/ItemList';
 import Loading from '../Loading/Loading';
 import NotFoundItems from '../NotFoundItems/NotFoundItems';
-import { getProducts } from '../../mocks/fakeApi';
+// import { getProducts } from '../../mocks/data';
+import {db} from  '../../firebase/config';
 
 const ItemListContainer = ({title='Ofertas'}) => {
     
@@ -14,28 +16,34 @@ const ItemListContainer = ({title='Ofertas'}) => {
     const {variable, id} = useParams();
  
     useEffect(() => {
-            setLoading(true)
-            getProducts
-            .then((response) => {
-                setText(id);
-                switch (variable) {
-                    case 'category':           
-                        setProductList(response.filter(product => product.category === id));
-                        break;
-                    case 'discipline':
-                        setProductList(response.filter(product => product.discipline === id));
-                        break;
-                    case 'brand':
-                        setProductList(response.filter(product => product.brand === id));
-                        break;
-                    default:
-                        setText(title);
-                        setProductList(response);
-                  }
+            setLoading(true);
 
+            // 1. armar la referencia a la coleccion que quiero consultar
+            const productsCollection = collection( db,'products');
+            // 2. armar la query
+            const q = variable ? query(productsCollection, where(variable, '==', id)) : productsCollection;
+            
+            //3. llamar (asincronamente) a la coleccion
+            getDocs(q)
+            .then(resp => {
+                
+                setText(id ? id: title);
+                
+                //4. obtener los datos de la coleccion
+                const products = resp.docs.map(doc => 
+                    ({
+                        id: doc.id,
+                        ...doc.data()
+                    })
+                );
+      
+                // 5. actualizar el estado con el array de objetos   
+                setProductList(products);
+                setLoading(false);
+              
             })
             .catch((error) =>console.log(error))
-            .finally(()=> setLoading(false))
+            .finally(()=> setLoading(false));
 
     }, [variable, id, title]);
 
