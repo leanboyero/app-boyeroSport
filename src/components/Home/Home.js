@@ -1,7 +1,6 @@
 import './Home.css';
 
-import { Carousel, Figure } from 'react-bootstrap';
-
+import { Carousel } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import React from 'react';
 

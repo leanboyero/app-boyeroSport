@@ -3,20 +3,38 @@ import './Cart.css';
 import * as Icon from 'react-bootstrap-icons';
 
 import { Link, useNavigate } from 'react-router-dom';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 
 import { Button } from 'react-bootstrap';
 import { CartContext } from '../../context/CartContext';
+import ConfirmAlert from '../ConfirmAlert/ConfirmAlert';
 import EmptyCart from '../EmptyCart/EmptyCart';
 
 const Cart = () => {
 
-  const {cart, removeItem, clearCart, cartQuantity, cartTotalPrice}= useContext(CartContext);
+  const {cart, removeItem, clearCart, cartTotalPrice}= useContext(CartContext);
 
   const navigate = useNavigate();
 
-  const removeHandle = (id) => {
+  const [showAlertItem, setShowAlertItem] = useState(false);
+
+  const [showAlertCart, setShowAlertCart] = useState(false);
+
+  const [itemSelected, setItemSelected] = useState(null);
+
+  const onAlertItem = (id) => {
+    setItemSelected(id);
+    setShowAlertItem(!showAlertItem);
+  }
+
+  const removeHandler = (id) => {
+    setItemSelected(null);
     removeItem(id);
+    setShowAlertItem(!showAlertItem);
+  }
+
+  const onAlertCart = () => {
+    setShowAlertCart(!showAlertCart);
   }
 
   const clearCartHandle = () => {
@@ -32,10 +50,11 @@ const Cart = () => {
   }
 
   return (
+    <><div className="section-header" style={{background: "url('/assents/images/contact/contact.jpg')center center no-repeat",
+    backgroundSize: 'cover', paddingBottom: '50px'}}><h1>Carrito de compras</h1></div> 
     <div className="row container">
-      <h3>Carrito de compras ({cartQuantity()})</h3>
     <div className="col-lg-9">
-     <div className="cart">
+     <div className=" cart">
        <table className="table cart-items">
          <thead>
            <tr>
@@ -49,7 +68,7 @@ const Cart = () => {
           <tbody>
             {cart.map((item,index) =>
               <tr key={index}>
-              <td colSpan={2} className="cart-product text-truncate"><Icon.X size={25} onClick={()=>removeHandle(item.id)} color="#555" className="remove-item" /> <Link to={`/detail/${item.id}`}><img src={item.images[0].image} height="70" width="70" alt={item.name} />{item.name}</Link></td>
+              <td colSpan={2} className="cart-product"><Icon.X size={25}  color="#555" className="remove-item"  onClick={(id)=>onAlertItem(item.id)} /> <Link to={`/detail/${item.id}`}><img src={item.images[0].image} height="70" width="70" alt={item.name} />{item.name}</Link></td>
               <td>{item.selectedSize ? item.selectedSize : '-'}</td>
               <td>${item.price}</td>
               <td>{item.quantity}</td>
@@ -57,7 +76,11 @@ const Cart = () => {
               </tr>)}
           </tbody>
        </table>
-       <button className="btn btn-primary" onClick={clearCartHandle}>Vaciar carrito</button>       
+       <Button variant="danger" onClick={()=>onAlertCart()}>Vaciar carrito</Button>       
+       <ConfirmAlert show={showAlertCart} title="¿Desea vaciar el carrito?"
+       text="Desaparecer&aacute;n todos los productos de tu carrito de compras."
+       onCancel={()=>setShowAlertCart(!showAlertCart)}
+       onConfirm={()=>clearCartHandle()}/> 
      </div>
      </div>
       <div className="col-lg-3">
@@ -73,7 +96,13 @@ const Cart = () => {
       </div>
       </div>
     </div>
-  );
+    <ConfirmAlert
+    show={showAlertItem}
+    title="¿Eliminar producto del carrito?"
+    text="Este producto desaparecer&aacute; de tu carrito de compras."
+    onCancel={()=>setShowAlertItem(!showAlertItem)}
+    onConfirm={removeHandler.bind(this,itemSelected)}/> 
+  </>);
 }
 
 export default Cart;

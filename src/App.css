@@ -136,14 +136,14 @@ b, strong {
     padding-left: var(--bs-gutter-x,.75rem);
     margin-right: auto;
     margin-left: auto;
-    padding-bottom: 30px;
+    padding-bottom: 50px;
     margin-left: auto;
     padding-top: 72px;
     margin-top: 50px;
 }
 
 #page .section-header{
-  background-color: #005d9f;
+  background-color: #6e65ec;
   background: "url(/assents/images/home/disciplina_desktop_2.png) no-repeat center center";
   background-size: cover;
   padding: 50px 0;

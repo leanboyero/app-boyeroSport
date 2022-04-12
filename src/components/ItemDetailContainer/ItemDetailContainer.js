@@ -18,7 +18,7 @@ const ItemDetailContainer = () => {
         .then((res) => setProduct(res.find(product => product.id === itemId)))
         .catch((error)=> console.log(error))
         .finally(()=> setLoading(false))
-    }, []);
+    }, [itemId]);
 
   return (
          <div className="row container detail">

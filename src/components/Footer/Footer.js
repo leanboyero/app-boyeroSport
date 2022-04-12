@@ -55,34 +55,34 @@ const Footer = () => {
           MARCAS:
           </h6>
           <ul className="marcas">
-              <li><Link to="/brand/nike"><img src="/assents/images/marcas/brandNike.png"/></Link></li>
-              <li><Link to="/brand/adidas"><img src="/assents/images/marcas/brandAdidas.png"/></Link></li>
-              <li><Link to="/brand/topper"><img src="/assents/images/marcas/brandTopper.png"/></Link></li>
-              <li><Link to="/brand/puma"><img src="/assents/images/marcas/brandPuma.png"/></Link></li>
+              <li><Link to="/brand/nike"><img src="/assents/images/marcas/brandNike.png" alt="brandNike" /></Link></li>
+              <li><Link to="/brand/adidas"><img src="/assents/images/marcas/brandAdidas.png" alt="brandAdidas" /></Link></li>
+              <li><Link to="/brand/topper"><img src="/assents/images/marcas/brandTopper.png" alt="brandTopper" /></Link></li>
+              <li><Link to="/brand/puma"><img src="/assents/images/marcas/brandPuma.png" alt="brandPuma" /></Link></li>
           </ul>
           <ul className="marcas">
-          <li><Link to="/brand/under%20armour"><img src="/assents/images/marcas/brandUnderArmour.png"/></Link></li>
-          <li><Link to="/brand/fila"><img src="/assents/images/marcas/brandFila.png"/></Link></li>
-          <li><Link to="/brand/garmin"><img src="/assents/images/marcas/brandGarmin.png"/></Link></li>
-              <li><Link to="/brand/reebok"><img src="/assents/images/marcas/brandReebok.png"/></Link></li>
+          <li><Link to="/brand/under%20armour"><img src="/assents/images/marcas/brandUnderArmour.png" alt="brandUnderArmour" /></Link></li>
+          <li><Link to="/brand/fila"><img src="/assents/images/marcas/brandFila.png" alt="brandFila" /></Link></li>
+          <li><Link to="/brand/garmin"><img src="/assents/images/marcas/brandGarmin.png" alt="brandGarmin" /></Link></li>
+              <li><Link to="/brand/reebok"><img src="/assents/images/marcas/brandReebok.png" alt="brandReebok"/></Link></li>
           </ul>
         </div>
         <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
           <h6 className="text-uppercase fw-bold mb-4">Seguinos:</h6>
           <div>
-      <a href="https://www.facebook.com/leandro.boyero" className="me-4 text-reset" target="_blank">
+      <a href="https://www.facebook.com/leandro.boyero" className="me-4 text-reset" target="_blank" rel="noopener noreferrer">
         <Icon.Facebook size={23} color="#47b2e4"/>
       </a>
-      <a href="" className="me-4 text-reset" target="_blank" >
+      <a href="" className="me-4 text-reset" target="_blank" rel="noopener noreferrer">
       <Icon.Google size={23} color="#47b2e4"/>
       </a>
-      <a href="" className="me-4 text-reset" target="_blank">
+      <a href="" className="me-4 text-reset" target="_blank" rel="noopener noreferrer">
       <Icon.Instagram size={23} color="#47b2e4"/>
       </a>
-      <a href="https://ar.linkedin.com/in/leandro-ezequiel-boyero-720b84a8" className="me-4 text-reset" target="_blank">
+      <a href="https://ar.linkedin.com/in/leandro-ezequiel-boyero-720b84a8" className="me-4 text-reset" target="_blank" rel="noopener noreferrer">
       <Icon.Linkedin size={23} color="#47b2e4"/>
       </a>
-      <a href="https://github.com/leanboyero" className="me-4 text-reset" target="_blank">
+      <a href="https://github.com/leanboyero" className="me-4 text-reset" target="_blank" rel="noopener noreferrer">
       <Icon.Github size={23} color="#47b2e4"/>
       </a>
     </div>

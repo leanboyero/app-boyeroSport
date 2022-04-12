@@ -39,28 +39,38 @@ const ItemListContainer = ({title='Ofertas'}) => {
 
     }, [variable, id, title]);
 
+
+    if(loading){
+         return (<div className="row container"><Loading text="Cargando productos..." /></div>);
+    }
+
+    if(productList.length === 0){
+        return (
+        <div className="row container">
+            <nav aria-label="breadcrumb">
+                        <ol className="breadcrumb">
+                        <li className="breadcrumb-item"><Link to={"/"}>Inicio</Link></li>
+                        <li className="breadcrumb-item active" aria-current="page">{text}</li>
+                       </ol>
+                     </nav>
+            <NotFoundItems text="Uups!  No se encontraron productos con la referencia seleccionada." />
+        </div>);
+    }
+
     return (
-        <> 
-             {loading ?  <div className="row container"><Loading text="Cargando productos..." /></div>: 
-                (<>{productList.length > 0 ? <div className="section-header" style={{background: "url('/assents/images/home/disciplina_desktop_2.png')center center no-repeat",backgroundSize: 'cover'}}>
-                                                <h1><Link to={"/"} className="icon-back"></Link>{text}</h1>
-                                           </div>
-                    : ''}
-                        <div className="row container">
+       <> <div className="section-header" style={{background: "url('/assents/images/home/disciplina_desktop_2.png')center center no-repeat",backgroundSize: 'cover'}}>
+            <h1><Link to={"/"} className="icon-back"></Link>{text}</h1>
+          </div>
+            <div className="row container">
                         <nav aria-label="breadcrumb">
                         <ol className="breadcrumb">
                         <li className="breadcrumb-item"><Link to={"/"}>Inicio</Link></li>
                         <li className="breadcrumb-item active" aria-current="page">{text}</li>
                        </ol>
-                      </nav>
-                   {productList.length > 0 ?   <ItemList productList={productList} /> 
-                    : <NotFoundItems text="Uups!  No se encontraron productos con la referencia seleccionada."/>}
+                     </nav>
+                    <ItemList productList={productList} /> 
                     </div>
-                </>)
-             }
-        </>
-   
-    );
+        </>);
 }
 
 export default ItemListContainer
