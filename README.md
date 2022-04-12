@@ -39,6 +39,7 @@ El proyecto en su desarrollo presenta las siguientes dependencias:
  - react-carousel-minimal para visualizar las diferentes images de cada uno de los productos. 
  - react-elastic-carousel  dentro del home para el slider de productos recomendados y ofertas recientes de las marcas.
  - react-router-dom para la navegación.
+ - react-bootstrap-sweetalert para generar mensajes de confirmación de tipo popup.
  - firebase  para persistencia de datos.
 
 
