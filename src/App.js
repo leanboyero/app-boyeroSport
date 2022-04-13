@@ -28,6 +28,9 @@ const App = () => {
      await addDoc(collection(db, "products"), product);
     });
   }*/
+  
+  // scroll to top
+  window.scrollTo(0, 0);
 
   return (
     <CartProvider>
