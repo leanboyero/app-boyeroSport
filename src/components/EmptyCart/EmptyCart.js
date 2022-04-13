@@ -15,7 +15,7 @@ const EmptyCart = () => {
   return (
     <div className="container">
     <Icon.CartX size={110} color="#ccc" />
-    <h1>Tu carrito est&aacute; vac&iacute;o.</h1>
+    <h2>Tu carrito est&aacute; vac&iacute;o.</h2>
     <p>Antes de proceder al pago, deber&aacute;s agregar algunos productos al carrito de compras.</p>
     <Button variant="light" onClick={toProductsHandle}>Ir al cat&aacute;logo</Button>
   </div>

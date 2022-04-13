@@ -68,7 +68,9 @@ const Cart = () => {
           <tbody>
             {cart.map((item,index) =>
               <tr key={index}>
-              <td colSpan={2} className="cart-product"><Icon.X size={25}  color="#555" className="remove-item"  onClick={(id)=>onAlertItem(item.id)} /> <Link to={`/detail/${item.id}`}><img src={item.images[0].image} height="70" width="70" alt={item.name} />{item.name}</Link></td>
+              <td colSpan={2} className="cart-product"><Icon.X size={25}  color="#555" className="remove-item"  onClick={(id)=>onAlertItem(item.id)} /> 
+                 <Link to={`/detail/${item.id}`}><img src={item.images[0].image} height="70" width="70" alt={item.name} />{item.name}</Link>
+              </td>
               <td>{item.selectedSize ? item.selectedSize : '-'}</td>
               <td>${item.price}</td>
               <td>{item.quantity}</td>
