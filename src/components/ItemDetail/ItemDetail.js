@@ -74,8 +74,13 @@ const ItemDetail = ({productDatail}) => {
                </div>
               { !isInCart ? 
                   (<>
-                     {sizes ? (<Select options={sizes} onSelect={setSelectedSize}/>) :''}
-                     <ItemCount  stockMax={stock} inicial={inicial} quantity={quantity} setQuantity={setQuantity} addToCart={addToCart} />
+                    {stock > 0 ? (<>
+                                 {sizes ? <Select options={sizes} onSelect={setSelectedSize}/> : ''} <ItemCount  stockMax={stock} inicial={inicial} quantity={quantity} setQuantity={setQuantity} addToCart={addToCart} />
+                                 </>) 
+                        :(<div className="alert alert-danger" role="alert">
+                            <h5 className="alert-heading">Lo sentimos!</h5>
+                            <p>Este producto no esta disponible en stock.</p>
+                            </div>)}
                   </>)
                   : (<>
                      <p>Talle: {selectedSize}</p>

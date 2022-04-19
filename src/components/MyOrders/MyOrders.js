@@ -54,7 +54,7 @@ function MyOrders() {
   return (
     <div>
         <div className="container">
-        <h1>Mis ordenes</h1>
+        <h2>Mis ordenes</h2>
             <div className="col-md-12">
                 <table className="table">
                     <thead>

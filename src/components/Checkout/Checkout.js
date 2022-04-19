@@ -4,7 +4,7 @@ import * as Icon from 'react-bootstrap-icons';
 
 import { Link, Navigate } from 'react-router-dom';
 import React, {useContext, useState} from 'react';
-import { Timestamp, addDoc, collection } from 'firebase/firestore';
+import { Timestamp, addDoc, collection, documentId, getDocs, query, where, writeBatch } from 'firebase/firestore';
 
 import { Button } from 'react-bootstrap';
 import { CartContext } from '../../context/CartContext';
@@ -32,8 +32,9 @@ const Checkout = () => {
     setValues({...values, [name]: value});
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+
     const orden = {
             items: cart,
             total  : cartTotalPrice(),
@@ -47,20 +48,55 @@ const Checkout = () => {
             user: user
     };
     
-    const orderRef = collection(db, 'orders')
-        addDoc(orderRef, orden)
-         .then((orden) => {
-            setOrderId(orden.id);
-            clearCart();
-             alert('Orden enviada');
+    const batch = writeBatch(db);
+    const ordersRef = collection(db, 'orders');
+    const productsRef = collection(db, 'products');
 
-         })
-         .catch(error => {
-             alert('Error al enviar la orden');
-            console.log(error);
-         }
-       );
-    
+    const q = query(productsRef, where(documentId() , 'in', cart.map(item => item.id)));
+
+    const products = await getDocs(q);
+
+    const outOfStock = [];
+
+    products.docs.forEach(doc => {
+        const itemIncart = cart.find(item => item.id === doc.id);
+
+        if(doc.data().stock >= itemIncart.quantity){ 
+          
+            batch.update(
+                doc.ref,{
+                    stock: doc.data().stock - itemIncart.quantity
+                }
+            );
+        }else{
+            outOfStock.push(itemIncart);       
+        }
+
+    });
+
+    if(outOfStock.length === 0){
+      await batch.commit()
+       addDoc(ordersRef, orden)
+        .then((orden) => {
+           setOrderId(orden.id);
+           clearCart();
+           alert('Orden enviada');
+      })
+      .catch(error => {
+          alert('Error al enviar la orden');
+         console.log(error);
+      }
+    );
+    } else {
+      
+      if( outOfStock.length === 1){
+        alert(`El producto ${outOfStock[0].name} no tiene suficiente stock`);
+      }else{
+        alert('No hay suficiente stock para los siguientes productos: ' + outOfStock.map(item => item.name).join(', '));
+      }
+      
+    }
+
   } 
 
   if(orderId){
