@@ -149,7 +149,7 @@ const Checkout = () => {
             </div>
             <div className="form-group">
             <label>Comentarios</label>
-                <textarea className="form-control" id="comments" name="comments" rows="3" value={values.coments} onChange={handleChangeInput} />
+                <textarea className="form-control" id="coments" name="coments" value={values.coments} onChange={handleChangeInput}></textarea>
             </div>
             <div className="form-group">
             <Button variant="success" type="submit" className="btn-block">
@@ -161,7 +161,7 @@ const Checkout = () => {
        <div className="col-lg-4">
        <div className="card">
        <div className="card-body checkout">
-       <h4>Carrito actual</h4>
+       <h4>Detalle </h4>
        <p><Link to="/cart"><Icon.ArrowLeft/>Volver al carrito</Link></p>
         <ul className="list-group ">
             {cart.map((item,index) => (
