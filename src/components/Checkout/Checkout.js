@@ -169,7 +169,7 @@ const Checkout = () => {
                     <div className="row">
                         <div className="col-md-8">
                         <p className="text-left text-primary"><small>{item.name}</small></p>
-                        <p className="text-left"><small> ({item.selectedSize}) x{item.quantity}</small></p>
+                        <p className="text-left"><small> {item.selectedSize ? 'Talle ' + item.selectedSize : ''} x{item.quantity}</small></p>
                         </div>
                         <div className="col-md-4">
                             <div className="d-flex">
