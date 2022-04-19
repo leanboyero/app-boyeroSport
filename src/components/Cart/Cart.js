@@ -9,10 +9,13 @@ import { Button } from 'react-bootstrap';
 import { CartContext } from '../../context/CartContext';
 import ConfirmAlert from '../ConfirmAlert/ConfirmAlert';
 import EmptyCart from '../EmptyCart/EmptyCart';
+import { UserContext } from '../../context/UserContext';
 
 const Cart = () => {
 
   const {cart, removeItem, clearCart, cartTotalPrice}= useContext(CartContext);
+
+  const {user} = useContext(UserContext);
 
   const navigate = useNavigate();
 
@@ -27,7 +30,7 @@ const Cart = () => {
     setShowAlertItem(!showAlertItem);
   }
 
-  const removeHandler = (id) => {
+  const handleRemoveItem = (id) => {
     setItemSelected(null);
     removeItem(id);
     setShowAlertItem(!showAlertItem);
@@ -43,6 +46,15 @@ const Cart = () => {
 
   const toProductsHandle = () => {
     navigate('/ofertas');
+  }
+  
+  const toCheckoutHandle = () => {
+    if(user){
+      navigate('/checkout');
+    }
+    else{
+      navigate('/signin');
+    }
   }
 
   if(cart.length === 0){
@@ -77,8 +89,7 @@ const Cart = () => {
               <td>${item.price*item.quantity}</td>
               </tr>)}
           </tbody>
-       </table>
-       <Button variant="danger" onClick={()=>onAlertCart()}>Vaciar carrito</Button>       
+       </table>       
        <ConfirmAlert show={showAlertCart} title="¿Desea vaciar el carrito?"
        text="Desaparecer&aacute;n todos los productos de tu carrito de compras."
        onCancel={()=>setShowAlertCart(!showAlertCart)}
@@ -91,8 +102,9 @@ const Cart = () => {
         <h5>Total del carrito</h5>
         <div className="price text-center"><h5>${cartTotalPrice()}</h5></div>
         <div className="d-grid gap-2">
-        <Button variant="success">Finalizar compra</Button>
         <Button variant="light" onClick={toProductsHandle}>Volver al cat&aacute;logo</Button>
+        <Button variant="danger" onClick={()=>onAlertCart()}>Vaciar carrito</Button>
+        <Button variant="primary" onClick={toCheckoutHandle}>Checkout <Icon.ArrowRight/></Button>
         </div>
         </div>
       </div>
@@ -103,7 +115,7 @@ const Cart = () => {
     title="¿Eliminar producto del carrito?"
     text="Este producto desaparecer&aacute; de tu carrito de compras."
     onCancel={()=>setShowAlertItem(!showAlertItem)}
-    onConfirm={removeHandler.bind(this,itemSelected)}/> 
+    onConfirm={handleRemoveItem.bind(this,itemSelected)}/> 
   </>);
 }
 

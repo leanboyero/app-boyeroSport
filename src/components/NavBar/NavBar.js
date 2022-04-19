@@ -1,14 +1,28 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Nav.css';
 
+import * as Icon from 'react-bootstrap-icons';
+
 import { Container, Nav, NavDropdown, Navbar } from 'react-bootstrap';
+import React, {useContext}  from 'react';
 
 import Cartwidget from '../Cartwidget/Cartwidget';
 import { Link } from "react-router-dom";
+import { UserContext } from '../../context/UserContext';
 import logo from '../../logo.png';
 
 const NavBar = () =>{
-    return(
+
+   const {user, signOutUser} = useContext(UserContext);
+
+   const iconGuest = user ? <><Icon.PersonCircle size={25}/> {user.name}</> : '';
+
+   const signOutHandle = () => {
+      signOutUser();
+   }
+
+
+  return(
 <Navbar collapseOnSelect expand="lg" variant="dark">
   <Container>
   <Navbar.Brand as={Link} to="/"><img src={logo} width="100%" height="45" className="align-top" alt="logo"/></Navbar.Brand>
@@ -49,15 +63,18 @@ const NavBar = () =>{
       <Nav.Link as={Link} to="/contacto">Contacto</Nav.Link>
     </Nav>
     <Nav>
+       {user ? (
+        <NavDropdown title={iconGuest}>
+         <NavDropdown.Item as={Link} to="/orders" >Mis ordenes</NavDropdown.Item>
+         <NavDropdown.Item as={Link} to="/signin" onClick={signOutHandle} >Cerrar sesión</NavDropdown.Item>
+         </NavDropdown>)
+             : (<Link as={Link}  to="/signin" className='buttonLogin'>Iniciar sesión</Link>) } 
     </Nav>
     <Nav className="me-auto">
-      <a href="#login" className='buttonLogin'>Iniciar sesión</a>
-      </Nav>
-      <Nav className="me-auto">
       <Nav.Link as={Link} to="/cart">
       <Cartwidget/>
       </Nav.Link>
-      </Nav>
+    </Nav>
   </Navbar.Collapse>
   </Container>
 </Navbar>

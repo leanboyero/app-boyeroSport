@@ -17,3 +17,15 @@ text-align: left;
   fill: #c90f0f;
   cursor:pointer;
 }
+
+.icon-next{
+  cursor:pointer;
+  text-decoration: none;
+  color: #fff;
+  font-size: 32px;
+}
+
+.icon-back:after {    
+  content:'\2190';
+  font-family: "woodmart-font";
+}

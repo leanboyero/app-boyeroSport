@@ -6,7 +6,7 @@ import ItemList from '../ItemList/ItemList';
 import Loading from '../Loading/Loading';
 import NotFoundItems from '../NotFoundItems/NotFoundItems';
 // import { getProducts } from '../../mocks/data';
-import {db} from  '../../firebase/config';
+import db from  '../../firebase/config';
 
 const ItemListContainer = ({title='Ofertas'}) => {
     
