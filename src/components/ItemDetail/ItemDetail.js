@@ -63,11 +63,9 @@ const ItemDetail = ({productDatail}) => {
          <div className='col-md-6'>
              <div className='product-content'>
                 <h4 className="title text-dark">{name}</h4>
-                <p>
-                {description}
-                </p>
+                <p> {description}</p>
                 <div className="mb-3"> 
-                    <div className="price h5">${price}</div>
+                  <div className="price h5">${price}</div>
                </div>
                <div className='payments-link'>
                <button onClick={()=> modalHandle()}><Icon.CreditCard  className='credit-card' color="#000" size={15} /> Ver los medios de pago</button>

@@ -5,7 +5,7 @@ import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 
 import Cart from './components/Cart/Cart';
 import { CartProvider } from './context/CartContext';
-import Checkout from './components/Checkout/Checkout';
+import CheckoutContainer from './components/CheckoutContainer/CheckoutContainer';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
@@ -43,7 +43,7 @@ const App = () => {
         <Route path="/:variable/:id" element={<ItemListContainer/>} />
         <Route path="/detail/:itemId" element={<ItemDetailContainer/>} />
         <Route path="/cart" element={<Cart/>} />
-        <Route path="/checkout" element={<Checkout/>} />
+        <Route path="/checkout" element={<CheckoutContainer/>} />
         <Route path="/orders" element={<MyOrders/>} />
         <Route path="/signin" element={<SignIn/>} />
         <Route path="/signup" element={<SignUp/>} />
