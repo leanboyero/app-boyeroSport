@@ -9,7 +9,7 @@
     color:#000;
 }
 .card-img, .card-img-top {
-    height: auto;
+    height: 100%;
     width: 100%;
 }
 

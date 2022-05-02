@@ -73,12 +73,6 @@ const Footer = () => {
       <a href="https://www.facebook.com/leandro.boyero" className="me-4 text-reset" target="_blank" rel="noopener noreferrer">
         <Icon.Facebook size={23} color="#47b2e4"/>
       </a>
-      <a href="" className="me-4 text-reset" target="_blank" rel="noopener noreferrer">
-      <Icon.Google size={23} color="#47b2e4"/>
-      </a>
-      <a href="" className="me-4 text-reset" target="_blank" rel="noopener noreferrer">
-      <Icon.Instagram size={23} color="#47b2e4"/>
-      </a>
       <a href="https://ar.linkedin.com/in/leandro-ezequiel-boyero-720b84a8" className="me-4 text-reset" target="_blank" rel="noopener noreferrer">
       <Icon.Linkedin size={23} color="#47b2e4"/>
       </a>

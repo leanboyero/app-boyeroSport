@@ -14,7 +14,7 @@ const ItemDetailContainer = () => {
     const {itemId} = useParams();
 
     useEffect(() => {
-        setLoading(true)
+        setLoading(true);
         const productRef = doc(db,'products',itemId);
         getDoc(productRef)
         .then(doc => {
@@ -25,9 +25,14 @@ const ItemDetailContainer = () => {
         
     }, [itemId]);
 
+
+  if(loading){
+      return (<div className="row container"><Loading text="Cargando un producto..." /></div>);
+  }
+
   return (
          <div className="row container detail">
-           {loading ? <Loading  text="Cargando un producto" /> : <ItemDetail productDatail={product} />}
+          <ItemDetail productDatail={product} />
          </div>
   );
 };

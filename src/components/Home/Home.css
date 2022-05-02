@@ -24,3 +24,41 @@
     width: 1905px;
     height: 496px;
 }
+video {
+  top: 0;
+  left: 0;
+    object-fit: cover;
+}
+
+span.home-img-block {
+  position: absolute!important;
+  left: 0!important;
+}
+
+.home-img-block {
+    position: absolute;
+    top: 42%;
+    font-family: 'menu',sans-serif;
+    font-size: 40px;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0,0,0,.36);
+    color: white;
+    font-weight: 700;
+}
+
+.figure{
+border: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.figures{
+  margin-top:30px;
+  margin-bottom:30px;
+}
+
+.card-img, .card-img-top {
+  height: 100%;
+  width: 100%;
+}

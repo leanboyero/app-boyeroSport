@@ -5,7 +5,6 @@ import { collection, getDocs, query, where } from 'firebase/firestore';
 import ItemList from '../ItemList/ItemList';
 import Loading from '../Loading/Loading';
 import NotFoundItems from '../NotFoundItems/NotFoundItems';
-// import { getProducts } from '../../mocks/data';
 import db from  '../../firebase/config';
 
 const ItemListContainer = ({title='Ofertas'}) => {
@@ -17,19 +16,13 @@ const ItemListContainer = ({title='Ofertas'}) => {
  
     useEffect(() => {
             setLoading(true);
-
-            // 1. armar la referencia a la coleccion que quiero consultar
             const productsCollection = collection( db,'products');
-            // 2. armar la query
             const q = variable ? query(productsCollection, where(variable, '==', id)) : productsCollection;
-            
-            //3. llamar (asincronamente) a la coleccion
             getDocs(q)
             .then(resp => {
                 
                 setText(id ? id: title);
                 
-                //4. obtener los datos de la coleccion
                 const products = resp.docs.map(doc => 
                     ({
                         id: doc.id,
@@ -37,7 +30,6 @@ const ItemListContainer = ({title='Ofertas'}) => {
                     })
                 );
       
-                // 5. actualizar el estado con el array de objetos   
                 setProductList(products);
                 setLoading(false);
               
