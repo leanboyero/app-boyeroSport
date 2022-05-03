@@ -46,7 +46,7 @@ El proyecto en su desarrollo presenta las siguientes dependencias:
 ## Aplicación en funcionamiento
 ## Demo
 
-![image](https://github.com/leanboyero/app-boyeroSport/demo.gif)
+![image](https://github.com/leanboyero/app-boyeroSport/blob/master/demo.gif)
 
 ### Autor
 
