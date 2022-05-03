@@ -9,6 +9,7 @@ import React, {useContext}  from 'react';
 import Cartwidget from '../Cartwidget/Cartwidget';
 import { Link } from "react-router-dom";
 import { UserContext } from '../../context/UserContext';
+import Wishwidget from '../Wishwidget/Wishwidget';
 import logo from '../../logo.png';
 
 const NavBar = () =>{
@@ -71,6 +72,9 @@ const NavBar = () =>{
              : (<Link as={Link}  to="/signin" className='buttonLogin'>Iniciar sesión</Link>) } 
     </Nav>
     <Nav className="me-auto">
+      <Nav.Link as={Link} to="/wishList">
+        <Wishwidget/>
+     </Nav.Link>
       <Nav.Link as={Link} to="/cart">
       <Cartwidget/>
       </Nav.Link>

@@ -20,6 +20,8 @@ import ScrollToTop from 'react-scroll-to-top';
 import SignIn from './components/SignIn/SignIn';
 import SignUp from './components/SignUp/SignUp';
 import { UserProvider } from './context/UserContext';
+import WishListContainer from './components/WishListContainer/WishListContainer';
+import { WishListProvider } from './context/WishListContext';
 
 const App = () => {
   
@@ -31,6 +33,7 @@ const App = () => {
   return (
     <UserProvider>
     <CartProvider>
+    <WishListProvider>
     <div className="App">
         <ScrollToTop smooth />
         <header id="header" className="fixed-top ">
@@ -50,11 +53,13 @@ const App = () => {
         <Route path="/signin" element={<SignIn/>} />
         <Route path="/signup" element={<SignUp/>} />
         <Route path="/resetpassword" element={<ResetPassword/>} />
+        <Route path="/wishList" element={<WishListContainer/>} />
         <Route path="*" element={<Navigate to={"/"} />} />
       </Routes>
       </section>
       <Footer/>
   </div>
+  </WishListProvider>
   </CartProvider>
 </UserProvider>
   );

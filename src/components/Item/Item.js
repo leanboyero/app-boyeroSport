@@ -1,10 +1,13 @@
 import './Item.css';
 
+import React, { useContext } from 'react';
+
 import { Card } from 'react-bootstrap';
 import { Link } from "react-router-dom";
-import React from 'react';
+import { WishListContext } from '../../context/WishListContext';
 
-const Item = ({product}) => {
+const Item = ({product, isRemoveItem}) => {
+  const {removeWish} = useContext(WishListContext);
   const {id, name, price, images} = product;
 
   const handleMouseOver = (e) => {
@@ -12,6 +15,10 @@ const Item = ({product}) => {
   }
   const handleMouseLeave = (e) => {
     e.target.src = images[0].image;
+  }
+
+  const handleRemoveItem = (id) => {
+    removeWish(id);
   }
   
   return (
@@ -27,6 +34,7 @@ const Item = ({product}) => {
     </Card.Body>
     </Link>
   </Card>
+  {isRemoveItem && <button className='btn btn-danger' onClick={()=>handleRemoveItem(id)}>Eliminar</button>} 
   </div>
   );
 };

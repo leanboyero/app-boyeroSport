@@ -80,7 +80,7 @@ footer .footer-newsletter h4 {
     color: #37517e;
 }
 
-footer .footer-newsletter form {
+footer .footer-newsletter .form {
     margin-top: 30px;
     background: #fff;
     padding: 6px 10px;
@@ -90,12 +90,12 @@ footer .footer-newsletter form {
     text-align: left;
 }
 
-footer .footer-newsletter form input[type=email] {
+footer .footer-newsletter .form input[type=email] {
     border: 0;
     padding: 4px 8px;
 }
 
-footer .footer-newsletter form input[type=submit] {
+footer .footer-newsletter .form input[type=submit] {
     position: absolute;
     top: 0;
     right: 0;

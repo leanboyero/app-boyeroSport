@@ -22,7 +22,7 @@
 
   .w-100 {
     width: 1905px;
-    height: 496px;
+    height: 460px;
 }
 video {
   top: 0;
@@ -47,10 +47,11 @@ span.home-img-block {
     font-weight: 700;
 }
 
-.figure{
+.figures .figure{
 border: 0px;
     margin: 0px;
     padding: 0px;
+    background-color: #008CBA;
 }
 
 .figures{
@@ -58,7 +59,25 @@ border: 0px;
   margin-bottom:30px;
 }
 
+.col-md-3.col-sm-4.col-12.figure.card:hover .overlay{
+  opacity: 0.8;
+}
+
 .card-img, .card-img-top {
   height: 100%;
   width: 100%;
+}
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #002b72e8;
 }

@@ -56,3 +56,8 @@
     color: #149ad9;
     font-weight: 500;
 }
+
+.wish{
+    cursor: pointer;
+    margin-left: 20px;
+}

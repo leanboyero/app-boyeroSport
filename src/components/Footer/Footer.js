@@ -4,28 +4,17 @@ import * as Icon from 'react-bootstrap-icons';
 
 import { Link } from 'react-router-dom';
 import React from 'react';
+import SuscriptionContainer from './SuscriptionContainer/SuscriptionContainer';
 import logo from '../../logoFooter.png';
 
 const Footer = () => {
   return (
 <>
 <footer className="text-center text-lg-start text-muted">
-<section className="footer-newsletter">
-      <div className="container">
-        <div className="row justify-content-center">
-          <div className="col-lg-6">
-            <h4>Recibí nuestras promociones</h4>
-            <form action="" method="post">
-              <input type="email" name="email" className="form-control"/><input type="submit" value="Suscribite" className="boton btn btn-primary"/>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
+  <SuscriptionContainer />
   <section className="">
     <div className="container text-md-start mt-5">
       <div className="row mt-3">
-
         <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
           <h6 className="text-uppercase fw-bold mb-4">
           <img src={logo} width="150" height="45" className="align-top" alt="logo"/>

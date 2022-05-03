@@ -16,6 +16,7 @@ const OrdersContainer = () => {
     const [ordersList, setOrdersList] = useState([]);
     const [loading, setLoading] = useState(false);
 
+
     useEffect(() => {
         setLoading(true);
         if(user){
@@ -34,6 +35,8 @@ const OrdersContainer = () => {
             .finally(()=> setLoading(false));
         }
     }, [user]);
+    
+
 
     if(user === null){
         return <Navigate to={"/"}/>;

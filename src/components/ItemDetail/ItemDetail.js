@@ -10,10 +10,13 @@ import ImageList from '../ImageList/ImageList';
 import ItemCount from '../ItemCount/ItemCount';
 import ModalPaymentMethods from './ModalPaymentMethods/ModalPaymentMethods';
 import Select from '../Select/Select';
+import { WishListContext } from '../../context/WishListContext';
 
 const ItemDetail = ({productDatail}) => {
 
     const {addItem} = useContext(CartContext);
+
+    const {addWishList, isInWishList, removeWish} = useContext(WishListContext);
 
     const inicial = 1;
     const {id, name, price, images, stock, description, sizes} = productDatail;
@@ -50,6 +53,23 @@ const ItemDetail = ({productDatail}) => {
       setIsInCart(true);
     }
 
+    const addToWishList = ()=> {
+      const itemToAdd = {
+        id,
+        name,
+        price,
+        quantity,
+        selectedSize,
+        images  
+      };
+      addWishList(itemToAdd);
+
+    }
+
+    const removeFromWishList = ()=> {
+      removeWish(id);
+    }
+
 
   return (
     <>  <nav aria-label="breadcrumb">
@@ -62,7 +82,8 @@ const ItemDetail = ({productDatail}) => {
          </div>
          <div className='col-md-6'>
              <div className='product-content'>
-                <h4 className="title text-dark">{name}</h4>
+                <h4 className="title text-dark">{name}
+              {isInWishList(id) ? <Icon.HeartFill size={30} color="#ccc" onClick={()=>removeFromWishList(id)} className="wish" />: <Icon.Heart size={30} color="#ccc" onClick={addToWishList} className="wish"/>}</h4>
                 <p> {description}</p>
                 <div className="mb-3"> 
                   <div className="price h5">${price}</div>

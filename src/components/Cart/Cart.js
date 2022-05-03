@@ -90,10 +90,7 @@ const Cart = () => {
               </tr>)}
           </tbody>
        </table>       
-       <ConfirmAlert show={showAlertCart} title="¿Desea vaciar el carrito?"
-       text="Desaparecer&aacute;n todos los productos de tu carrito de compras."
-       onCancel={()=>setShowAlertCart(!showAlertCart)}
-       onConfirm={()=>clearCartHandle()}/> 
+       <ConfirmAlert show={showAlertCart} title="¿Desea vaciar el carrito?" text="Desaparecer&aacute;n todos los productos de tu carrito de compras."  onCancel={()=>setShowAlertCart(!showAlertCart)}  onConfirm={()=>clearCartHandle()}/> 
      </div>
      </div>
       <div className="col-lg-3">

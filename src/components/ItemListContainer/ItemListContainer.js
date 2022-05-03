@@ -68,7 +68,7 @@ const ItemListContainer = ({title='Ofertas'}) => {
                         <li className="breadcrumb-item active" aria-current="page">{text}</li>
                        </ol>
                      </nav>
-                    <ItemList productList={productList} /> 
+                    <ItemList productList={productList} isRemoveItems={false} /> 
                     </div>
         </>);
 }

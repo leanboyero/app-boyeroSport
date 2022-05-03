@@ -3,12 +3,20 @@ import 'react-pagination-bar/dist/index.css';
 import React, {useState} from 'react';
 
 import { Button } from 'react-bootstrap';
+import OrderDetailContainer from '../OrderDetailContainer/OrderDetailContainer';
 import PaginationBar from '../PaginationBar/PaginationBar';
 
 function Orders({ordersList}) {
    
     const [currentPage, setCurrentPage] = useState(1);
-    
+    const [modalVisible, setModalVisible] = useState(false);
+    const [orderSelected, setOrderSelected] = useState(null);
+
+    const handleOrderDetail = (id) => {
+        setOrderSelected(id);
+        setModalVisible(!modalVisible);
+    };
+
   return (
             <div className="col-md-12">
                 <table className="table">
@@ -33,7 +41,7 @@ function Orders({ordersList}) {
                                 <td>{order.buyer.shipping}</td>
                                 <td>${order.total}</td>
                                 <td>
-                                    <Button variant="primary" >
+                                    <Button variant="primary" onClick={(id)=>handleOrderDetail(order.id)} >
                                         Ver detalle
                                     </Button>
                                 </td>
@@ -42,6 +50,8 @@ function Orders({ordersList}) {
                     </tbody>
                 </table>
              <PaginationBar itemsPerPage={10} currentPage={currentPage} setCurrentPage={(pageNumber) => setCurrentPage(pageNumber)} totalItems={ordersList.length}/>
+           {modalVisible && <OrderDetailContainer orderSelected={orderSelected} modalVisible={modalVisible} setModalVisible={setModalVisible}/>}
+            
             </div>
   );
 };
