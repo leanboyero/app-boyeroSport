@@ -10,7 +10,7 @@ const SliderHome = () => {
        <img
         className="d-block w-100"
         src="/assents/images/home/nike_desktop.png"
-        alt="nike_desktop" height="480px"
+        alt="nike_desktop"
       />
       </Link> 
     </Carousel.Item>
@@ -19,7 +19,7 @@ const SliderHome = () => {
       <img
         className="d-block w-100"
         src="/assents/images/home/toppervrspeed_desktop.png"
-        alt="Second slide"  height="480px"
+        alt="Second slide"  
       />
     </Link> 
     </Carousel.Item>

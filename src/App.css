@@ -126,7 +126,7 @@ b, strong {
   flex: 1 1 auto;
   height: 100%;
   overflow: hidden;
-  top: 72px;
+  top: 70px;
   text-align: center;
 }
 
@@ -152,7 +152,7 @@ b, strong {
   color: #fff;
   margin-bottom: 0px;
   padding-bottom: 90px;
-  top:75px;
+  top:72px;
 }
 
 .section-header h1{

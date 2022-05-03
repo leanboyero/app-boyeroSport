@@ -58,8 +58,6 @@ const ItemDetail = ({productDatail}) => {
         id,
         name,
         price,
-        quantity,
-        selectedSize,
         images  
       };
       addWishList(itemToAdd);

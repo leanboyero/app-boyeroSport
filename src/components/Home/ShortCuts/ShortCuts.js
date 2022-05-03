@@ -1,11 +1,12 @@
+import './ShortCuts.css';
+
 import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import React from 'react';
 
 const ShortCuts = () => {
   return (
-    <div className="row container col-12 px-2">
-    <div className="row figures col-12 px-2">
+    <div className="row container figures">
     <Card className="col-md-3 col-sm-4 col-12 figure">
     <Link to="/category/hombre-indumentaria">
       <Card.Img variant="top" src="/assents/images/home/indumentaria-hombres.jpg" />
@@ -15,8 +16,7 @@ const ShortCuts = () => {
    </Card>
    <Card className="col-md-3 col-sm-4 col-12 figure">
    <Link to="/category/mujer-indumentaria">
-      <Card.Img variant="top" src="/assents/images/home/indumentaria-mujeres.jpg" />
-      
+      <Card.Img variant="top" src="/assents/images/home/indumentaria-mujeres.jpg" />   
       <span className="home-img-block">MUJER</span>
       <div className="overlay"></div>
       </Link>
@@ -35,7 +35,6 @@ const ShortCuts = () => {
       <div className="overlay"></div>
       </Link>
    </Card>
-  </div>
   </div>
   );
 }

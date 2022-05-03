@@ -49,3 +49,13 @@ width: 100%;
     color: #149ad9;
 }
 
+.item .wish{
+   top: 20px;
+   position: absolute;
+   margin-left: 20px;
+}
+
+.item .btn-danger{
+margin-bottom: 30px;
+}
+

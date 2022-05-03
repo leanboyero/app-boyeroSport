@@ -1,7 +1,5 @@
 import './ItemCount.css'
 
-import * as Icon from 'react-bootstrap-icons';
-
 import { Button } from 'react-bootstrap';
 
 const ItemCount = ({stockMax=10, inicial, quantity, setQuantity, addToCart}) =>{
@@ -31,7 +29,7 @@ const ItemCount = ({stockMax=10, inicial, quantity, setQuantity, addToCart}) =>{
                <Button className="btn btn-icon btn-light" onClick={()=>handleSumar()}>+</Button>
             </div>
             <div className="actions">
-                <Button variant="primary" onClick={addToCart} ><Icon.Cart  color="#fff" size={18}/> Agregar al carrito</Button>
+                <Button variant="primary" onClick={addToCart} > Agregar al carrito</Button>
             </div>
           </div>   
     </div>

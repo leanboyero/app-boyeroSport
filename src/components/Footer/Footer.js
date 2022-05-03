@@ -78,17 +78,17 @@ const Footer = () => {
   <div className="p-4 footer-bottom" style={{backgroundColor: "#37517e"}}>
     <div className="copyright">©BOYERO SPORT - 2022 - TODOS LOS DERECHOS RESERVADOS.</div>
     <div>
-        <img width="40" src="https://tienda.havanna.com.ar/wp-content/uploads/2020/10/visa@2x.png" alt=""/>
-        <img width="40" src="https://tienda.havanna.com.ar/wp-content/uploads/2020/10/mastercard@2x.png" alt=""/>
-        <img width="40" src="https://tienda.havanna.com.ar/wp-content/uploads/2020/10/amex@2x.png" alt=""/>
-        <img width="40" src="https://tienda.havanna.com.ar/wp-content/uploads/2020/10/diners@2x.png" alt=""/>
-        <img width="40" src="https://tienda.havanna.com.ar/wp-content/uploads/2020/10/banelco@2x.png" alt=""/>
-        <img width="40" src="https://tienda.havanna.com.ar/wp-content/uploads/2020/10/cabal@2x.png" alt=""/>
-        <img width="40" src="https://tienda.havanna.com.ar/wp-content/uploads/2020/10/tarjeta-naranja@2x.png" alt=""/>
-        <img width="40" src="https://tienda.havanna.com.ar/wp-content/uploads/2020/10/tarjeta-shopping@2x.png" alt=""/>
-        <img width="40" src="https://tienda.havanna.com.ar/wp-content/uploads/2020/10/mercadopago@2x.png" alt=""/>
-        <img width="40" src="https://tienda.havanna.com.ar/wp-content/uploads/2020/10/argencard@2x.png" alt=""/>
-        <img width="40" src="https://tienda.havanna.com.ar/wp-content/uploads/2020/10/cencosud@2x.png" alt=""/>
+        <img width="40" src="/assents/images/footer/visa@2x.png" alt=""/>
+        <img width="40" src="/assents/images/footer/mastercard@2x.png" alt=""/>
+        <img width="40" src="/assents/images/footer/amex@2x.png" alt=""/>
+        <img width="40" src="/assents/images/footer/diners@2x.png" alt=""/>
+        <img width="40" src="/assents/images/footer/banelco@2x.png" alt=""/>
+        <img width="40" src="/assents/images/footer/cabal@2x.png" alt=""/>
+        <img width="40" src="/assents/images/footer/tarjeta-naranja@2x.png" alt=""/>
+        <img width="40" src="/assents/images/footer/tarjeta-shopping@2x.png" alt=""/>
+        <img width="40" src="/assents/images/footer/mercadopago@2x.png" alt=""/>
+        <img width="40" src="/assents/images/footer/argencard@2x.png" alt=""/>
+        <img width="40" src="/assents/images/footer/cencosud@2x.png" alt=""/>
     </div>
    </div>
 </footer>

@@ -16,10 +16,10 @@ const Home = (props) => {
     <SliderHome/>
     <div className="row container col-12 px-2">
       <CarouserItemContainer />
-      <Link to="/brand/puma" class="row container"><img src="https://ar.puma.com/media/contentmanager/content/22SS_Ecom_MF_TS_Football_Instinct-Pack_Q1_FullBleedHero-Large_Desktop_1440x500px_Player.jpg" alt="Puma" width="100%"/></Link>
+      <Link to="/brand/puma" className="row container"><img src="https://ar.puma.com/media/contentmanager/content/22SS_Ecom_MF_TS_Football_Instinct-Pack_Q1_FullBleedHero-Large_Desktop_1440x500px_Player.jpg" alt="Puma" width="100%"/></Link>
+      <CarouserBrandContainer />
+      <ShortCuts/>
    </div>
-   <CarouserBrandContainer />
-   <ShortCuts/>
    <VideoPlayer src="/assents/video/PUMA.mp4"/> 
  </>
   )

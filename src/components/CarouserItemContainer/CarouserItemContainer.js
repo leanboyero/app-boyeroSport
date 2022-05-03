@@ -8,7 +8,7 @@ import CarouserItems from 'react-elastic-carousel';
 import Loading from '../Loading/Loading';
 import db from  '../../firebase/config';
 
-const CarouserItemContainer = ({title='Ofertas'}) => {
+const CarouserItemContainer = () => {
     
     const [productList, setProductList] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -57,7 +57,7 @@ const CarouserItemContainer = ({title='Ofertas'}) => {
     return (
         <div className='mt-5 container'>
         <h3>Productos recomendados</h3>
-        <CarouserItems  breakPoints={breakPoints}>
+        <CarouserItems  breakPoints={breakPoints} >
          {productList.map((product)=> <CarouserItem product={product} key={product.id}/>)}
         </CarouserItems>
         </div>

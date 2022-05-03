@@ -55,7 +55,7 @@ export const WishListProvider = ({children}) => {
   }
   
   const wishListQuantity = () => {
-    return wishList.reduce((acc, prod) => acc + prod.quantity, 0);
+    return wishList.length
 
 }
 
